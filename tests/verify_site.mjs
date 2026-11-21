@@ -23,11 +23,20 @@ import {
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '..');
 
+const NARROW_PAGES = [
+  'should-i-block-gptbot.html',
+  'llms-txt-vs-robots-txt.html',
+  'faqpage-schema-ai-citations.html',
+  'what-is-a-good-geo-score.html',
+  'chatgpt-not-citing-my-page.html',
+];
+
 const HTML_FILES = [
   'index.html',
   'best-geo-tools-2026.html',
   'llms-txt-guide.html',
   'robots-txt-ai-crawlers.html',
+  ...NARROW_PAGES,
   '404.html',
 ];
 
@@ -98,7 +107,7 @@ test('All JSON-LD blocks parse cleanly and declare valid @type', () => {
       totalBlocks += 1;
     }
   }
-  assert.ok(totalBlocks >= 8, `Expected at least 8 JSON-LD blocks total, found ${totalBlocks}`);
+  assert.ok(totalBlocks >= 18, `Expected at least 18 JSON-LD blocks total, found ${totalBlocks}`);
 });
 
 test('All data-affiliate attributes reference registered programs', () => {
@@ -115,7 +124,7 @@ test('All data-affiliate attributes reference registered programs', () => {
       count += 1;
     }
   }
-  assert.ok(count >= 10, `Expected >=10 affiliate placements across site, found ${count}`);
+  assert.ok(count >= 20, `Expected >=20 affiliate placements across site, found ${count}`);
 });
 
 test('All DOM IDs bound by assets/app.js exist in index.html', () => {
@@ -183,13 +192,15 @@ test('Tool 3: generateRobotsTxt works across all 3 presets and custom bot overri
   assert.ok(custom.output.includes('User-agent: PerplexityBot\nAllow: /'));
 });
 
-test('Affiliate URL builder appends UTM params & contextual recommendations work', () => {
+test('Affiliate URL builder preserves live Mangools hash & appends UTM params', () => {
   for (const id of Object.keys(AFFILIATE_PROGRAMS)) {
     const href = buildAffiliateHref(id, 'unit_test');
     assert.ok(href.includes('utm_source=citepulse_geo'));
     assert.ok(href.includes('utm_medium=affiliate'));
     assert.ok(href.includes('utm_campaign=unit_test'));
   }
+  const mangoolsHref = buildAffiliateHref('mangools', 'unit_test');
+  assert.ok(mangoolsHref.endsWith('#a6b01bec06aee08900128e011'), `Mangools hash missing: ${mangoolsHref}`);
 
   const high = runGeoAudit(AUDIT_SAMPLES.high.input, AUDIT_SAMPLES.high.url);
   const low = runGeoAudit(AUDIT_SAMPLES.low.input, AUDIT_SAMPLES.low.url);
@@ -197,15 +208,18 @@ test('Affiliate URL builder appends UTM params & contextual recommendations work
   assert.ok(['surfer', 'writesonic'].includes(pickContextualRecommendation(low).program.id));
 });
 
-test('Root llms.txt, robots.txt, and sitemap.xml are consistent', () => {
+test('Root llms.txt, robots.txt, sitemap.xml, and index.html include all 5 new narrow pages', () => {
   const llms = fs.readFileSync(path.join(ROOT, 'llms.txt'), 'utf8');
   const sitemap = fs.readFileSync(path.join(ROOT, 'sitemap.xml'), 'utf8');
   const robots = fs.readFileSync(path.join(ROOT, 'robots.txt'), 'utf8');
+  const indexHtml = fs.readFileSync(path.join(ROOT, 'index.html'), 'utf8');
 
   assert.equal(validateLlmsTxt(llms).valid, true);
-  assert.ok(sitemap.includes('best-geo-tools-2026.html'));
-  assert.ok(sitemap.includes('llms-txt-guide.html'));
-  assert.ok(sitemap.includes('robots-txt-ai-crawlers.html'));
+  for (const page of ['best-geo-tools-2026.html', 'llms-txt-guide.html', 'robots-txt-ai-crawlers.html', ...NARROW_PAGES]) {
+    assert.ok(sitemap.includes(page), `sitemap.xml missing ${page}`);
+    assert.ok(llms.includes(page), `llms.txt missing ${page}`);
+    assert.ok(indexHtml.includes(page), `index.html missing link to ${page}`);
+  }
   assert.ok(robots.includes('Sitemap: https://xuj43761-coder.github.io/citepulse-geo/sitemap.xml'));
 });
 

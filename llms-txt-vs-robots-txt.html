@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>llms.txt vs robots.txt: What Is the Difference? (2026 Guide) — CitePulse GEO</title>
+  <meta name="description" content="robots.txt controls crawler permission; llms.txt provides a curated Markdown map of your best pages for AI assistants. Learn when to deploy both and how to verify them.">
+  <link rel="canonical" href="https://xuj43761-coder.github.io/citepulse-geo/llms-txt-vs-robots-txt.html">
+  <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="llms.txt vs robots.txt: What Is the Difference? (2026 Guide)">
+  <meta property="og:description" content="robots.txt is permission control; llms.txt is a curated AI map. One cannot replace the other—see the side-by-side matrix and setup workflow.">
+  <meta property="og:url" content="https://xuj43761-coder.github.io/citepulse-geo/llms-txt-vs-robots-txt.html">
+  <meta property="og:image" content="https://xuj43761-coder.github.io/citepulse-geo/assets/og-card.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://xuj43761-coder.github.io/citepulse-geo/assets/og-card.png">
+  <link rel="stylesheet" href="./assets/styles.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "llms.txt vs robots.txt: What Is the Difference? (2026 Guide)",
+    "description": "Clear side-by-side comparison explaining why robots.txt governs crawler access permissions while llms.txt acts as a curated Markdown map for AI assistants.",
+    "datePublished": "2026-11-22",
+    "dateModified": "2026-11-22",
+    "author": {
+      "@type": "Organization",
+      "name": "CitePulse GEO"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "CitePulse GEO"
+    },
+    "mainEntityOfPage": "https://xuj43761-coder.github.io/citepulse-geo/llms-txt-vs-robots-txt.html"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Does adding llms.txt block AI crawlers from scraping my site?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. llms.txt is an informational Markdown directory, not an access-control standard. To block training crawlers like GPTBot or ClaudeBot, you must use robots.txt directives or server/CDN rules."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "If I already have robots.txt and sitemap.xml, do I still need llms.txt?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "robots.txt manages crawl permission and sitemap.xml lists every indexable URL without editorial priority. llms.txt complements both by pointing AI assistants and agents directly to your highest-signal docs, pricing, and comparison pages in clean Markdown."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What happens if llms.txt links to a path disallowed in robots.txt?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Compliant AI crawlers obey robots.txt first, so listing a disallowed or broken URL inside llms.txt creates a dead end. Keep both files aligned so every URL in llms.txt returns HTTP 200 and is allowed for AI search bots."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand-link" href="./" aria-label="CitePulse GEO Home">
+        <img src="./assets/logo.svg" alt="CitePulse GEO">
+      </a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="./">Free Toolkit</a>
+        <a href="./best-geo-tools-2026.html">Best GEO Tools (2026)</a>
+        <a href="./llms-txt-guide.html">llms.txt Guide</a>
+        <a href="./robots-txt-ai-crawlers.html">AI Crawlers Matrix</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="disclosure-bar">
+    <div class="container">
+      <p><strong>FTC Affiliate Disclosure:</strong> CitePulse GEO tools are free to use. Outbound links to paid monitoring suites may earn an affiliate commission at no extra cost to you.</p>
+    </div>
+  </div>
+
+  <main class="article-wrap">
+    <h1><code>llms.txt</code> vs <code>robots.txt</code>: What Is the Difference?</h1>
+    <div class="article-meta">Updated November 2026 &bull; 4-minute read &bull; Quick GEO Answer</div>
+
+    <p><strong>Short answer: <code>robots.txt</code> is permission; <code>llms.txt</code> is a map.</strong> Publishing <code>/llms.txt</code> will never block a crawler from scraping your site, and editing <code>/robots.txt</code> will never tell ChatGPT, Claude, or Perplexity which canonical documentation or comparison page they should cite first. High-performing sites publish both files at the domain root and keep them aligned.</p>
+
+    <div class="callout">
+      <strong>Generate and validate both root files in your browser:</strong> Build your curated manifest with our <a href="./#llmstxt">Free llms.txt Generator &amp; Validator &rarr;</a>, then set crawler access rules in the <a href="./#robots">robots.txt Policy Builder &rarr;</a>.
+    </div>
+
+    <h2>Side-by-Side Comparison: <code>robots.txt</code> vs <code>llms.txt</code></h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Dimension</th>
+            <th><code>robots.txt</code></th>
+            <th><code>llms.txt</code></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Core Job</strong></td>
+            <td>Access permission (Allow / Disallow paths per bot)</td>
+            <td>Editorial map (curated links + one-line context for LLMs)</td>
+          </tr>
+          <tr>
+            <td><strong>Format</strong></td>
+            <td>Plain text RFC 9309 directives (<code>User-agent</code>, <code>Allow</code>, <code>Disallow</code>)</td>
+            <td>Structured Markdown (<code># H1</code>, <code>&gt; summary</code>, <code>## sections</code>, bullet links)</td>
+          </tr>
+          <tr>
+            <td><strong>Can It Block Training Bots?</strong></td>
+            <td><strong>Yes</strong> (e.g., <code>User-agent: GPTBot</code> / <code>Disallow: /</code>)</td>
+            <td><strong>No</strong> &mdash; purely advisory navigation</td>
+          </tr>
+          <tr>
+            <td><strong>Can It Prioritize Best Pages?</strong></td>
+            <td><strong>No</strong> &mdash; only allows or blocks path prefixes</td>
+            <td><strong>Yes</strong> &mdash; highlights canonical docs, pricing, and specs</td>
+          </tr>
+          <tr>
+            <td><strong>Typical Size</strong></td>
+            <td>20&ndash;80 lines</td>
+            <td>10&ndash;40 curated high-value URLs</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>How to Deploy Both Files Without Conflicts</h2>
+    <ol>
+      <li><strong>Set permissions first in <code>/robots.txt</code>:</strong> Explicitly allow live AI search crawlers (<code>OAI-SearchBot</code>, <code>ChatGPT-User</code>, <code>Claude-SearchBot</code>, <code>PerplexityBot</code>) and disallow any training bots you want to exclude.</li>
+      <li><strong>Curate 5&ndash;25 canonical URLs in <code>/llms.txt</code>:</strong> Start with a single <code># Site Name</code> H1, a concise <code>&gt; blockquote</code> summary, and grouped <code>##</code> sections linking only to live, high-signal pages (docs, pricing, product comparisons, core tools).</li>
+      <li><strong>Cross-check every link:</strong> Verify that no URL inside <code>/llms.txt</code> is disallowed by <code>/robots.txt</code>, redirected to a login wall, or returning HTTP 404.</li>
+      <li><strong>Fill the content gaps next:</strong> Once both root files pass validation, the real bottleneck shifts from file syntax to missing citable pages—such as narrow comparison pages, pricing explainers, and question-led answers. Teams scaling citation-ready content often pair static manifests with a dedicated GEO writing and audit platform like <a href="#" data-affiliate="writesonic" data-placement="llmstxt_vs_robots_inline">Writesonic GEO</a>.</li>
+    </ol>
+
+    <h2>Common Mistakes That Waste Both Files</h2>
+    <ul>
+      <li><strong>Dumping 500 blog URLs into <code>llms.txt</code>:</strong> That duplicates <code>sitemap.xml</code> and dilutes your highest-authority documentation. Keep <code>llms.txt</code> tight and opinionated.</li>
+      <li><strong>Using relative links inside <code>llms.txt</code>:</strong> Always use full canonical <code>https://</code> URLs so external parsers and AI agents can resolve them without guessing the host.</li>
+      <li><strong>Assuming <code>llms.txt</code> overrides <code>robots.txt</code>:</strong> If your <code>robots.txt</code> or WAF blocks <code>OAI-SearchBot</code>, an assistant may never fetch the URLs listed in your <code>llms.txt</code>.</li>
+    </ul>
+
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-list">
+      <details class="faq-item" open>
+        <summary>Does adding llms.txt block AI crawlers from scraping my site?</summary>
+        <p>No. <code>llms.txt</code> is an informational Markdown directory, not an access-control standard. To block training crawlers like <code>GPTBot</code> or <code>ClaudeBot</code>, you must use <code>robots.txt</code> directives or server/CDN rules.</p>
+      </details>
+      <details class="faq-item">
+        <summary>If I already have robots.txt and sitemap.xml, do I still need llms.txt?</summary>
+        <p><code>robots.txt</code> manages crawl permission and <code>sitemap.xml</code> lists every indexable URL without editorial priority. <code>llms.txt</code> complements both by pointing AI assistants and agents directly to your highest-signal docs, pricing, and comparison pages in clean Markdown.</p>
+      </details>
+      <details class="faq-item">
+        <summary>What happens if llms.txt links to a path disallowed in robots.txt?</summary>
+        <p>Compliant AI crawlers obey <code>robots.txt</code> first, so listing a disallowed or broken URL inside <code>llms.txt</code> creates a dead end. Keep both files aligned so every URL in <code>llms.txt</code> returns HTTP 200 and is allowed for AI search bots.</p>
+      </details>
+    </div>
+
+    <div class="callout">
+      <strong>Root files valid, but missing citable comparison pages?</strong> Once your <code>llms.txt</code> and <code>robots.txt</code> are clean, explore <a href="#" data-affiliate="writesonic" data-placement="llmstxt_vs_robots_callout">Writesonic GEO &rarr;</a> to uncover missing entity questions and draft citation-ready landing pages faster.
+    </div>
+
+    <div class="btn-row">
+      <a class="btn btn-primary" href="./#llmstxt">Build &amp; Validate Your llms.txt &rarr;</a>
+      <a class="btn btn-secondary" href="./llms-txt-guide.html">Read the Full llms.txt Spec Guide &rarr;</a>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <strong>CitePulse GEO</strong> &mdash; Free AI Search Visibility &amp; GEO Audit Toolkit.
+      </div>
+      <div class="footer-links">
+        <a href="./#auditor">GEO Auditor</a>
+        <a href="./#llmstxt">llms.txt Generator</a>
+        <a href="./#robots">robots.txt Builder</a>
+        <a href="./best-geo-tools-2026.html">Best GEO Tools</a>
+        <a href="./llms-txt-guide.html">llms.txt Guide</a>
+        <a href="./robots-txt-ai-crawlers.html">AI Crawlers Guide</a>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="./assets/app.js"></script>
+</body>
+</html>

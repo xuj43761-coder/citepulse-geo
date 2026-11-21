@@ -14,5 +14,12 @@ All interactive tools run 100% locally in the visitor's browser with zero sign-u
 - [Complete llms.txt Guide (2026)](https://xuj43761-coder.github.io/citepulse-geo/llms-txt-guide.html): Syntax specification, examples, and deployment steps for Cloudflare Pages, Vercel, GitHub Pages, and WordPress.
 - [AI Crawlers robots.txt Matrix (2026)](https://xuj43761-coder.github.io/citepulse-geo/robots-txt-ai-crawlers.html): Complete directory of AI search vs. training user-agents and recommended policies.
 
+## Quick GEO Answers
+- [Should I Block GPTBot but Allow OAI-SearchBot?](https://xuj43761-coder.github.io/citepulse-geo/should-i-block-gptbot.html): How to separate live ChatGPT Search citations from model training crawlers in robots.txt.
+- [llms.txt vs robots.txt: What Is the Difference?](https://xuj43761-coder.github.io/citepulse-geo/llms-txt-vs-robots-txt.html): Why robots.txt governs crawler permissions while llms.txt acts as a curated Markdown map.
+- [FAQPage Schema for AI Citations](https://xuj43761-coder.github.io/citepulse-geo/faqpage-schema-ai-citations.html): Visible HTML Q&A first, matching FAQPage JSON-LD second, and sitewide audit verification.
+- [What Is a Good GEO Score?](https://xuj43761-coder.github.io/citepulse-geo/what-is-a-good-geo-score.html): Honest benchmarks for 97/100, 86/100, and 12/100 readiness scores and why SERP competition comes next.
+- [Why ChatGPT Is Not Citing My Website](https://xuj43761-coder.github.io/citepulse-geo/chatgpt-not-citing-my-page.html): 3 verifiable technical checks to rule out before chasing off-site mentions.
+
 ## Optional
 - [XML Sitemap](https://xuj43761-coder.github.io/citepulse-geo/sitemap.xml): Canonical list of public CitePulse GEO URLs.

@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Why ChatGPT Is Not Citing My Website: 3 Technical Checks First (2026) — CitePulse GEO</title>
+  <meta name="description" content="Before chasing PR or Reddit mentions, rule out three verifiable blockers: blocked OAI-SearchBot, missing extractable facts/definitions, and broken llms.txt pointers.">
+  <link rel="canonical" href="https://xuj43761-coder.github.io/citepulse-geo/chatgpt-not-citing-my-page.html">
+  <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Why ChatGPT Is Not Citing My Website: 3 Technical Checks First (2026)">
+  <meta property="og:description" content="A 3-step troubleshooting checklist to verify crawler access, extractable fact density, and llms.txt links before investing in off-site authority.">
+  <meta property="og:url" content="https://xuj43761-coder.github.io/citepulse-geo/chatgpt-not-citing-my-page.html">
+  <meta property="og:image" content="https://xuj43761-coder.github.io/citepulse-geo/assets/og-card.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://xuj43761-coder.github.io/citepulse-geo/assets/og-card.png">
+  <link rel="stylesheet" href="./assets/styles.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Why ChatGPT Is Not Citing My Website: 3 Technical Checks First (2026)",
+    "description": "Diagnostic checklist covering the three verifiable technical blockers that prevent ChatGPT Search from citing a page, plus how to monitor citation share over time.",
+    "datePublished": "2026-11-22",
+    "dateModified": "2026-11-22",
+    "author": {
+      "@type": "Organization",
+      "name": "CitePulse GEO"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "CitePulse GEO"
+    },
+    "mainEntityOfPage": "https://xuj43761-coder.github.io/citepulse-geo/chatgpt-not-citing-my-page.html"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Why is ChatGPT not citing my website even though it ranks on Google?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The most common technical causes are blocking OAI-SearchBot in robots.txt or a CDN firewall, rendering core facts only after client-side JavaScript execution, or publishing generic marketing prose without concrete definitions, numbers, or tables an answer engine can extract cleanly."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Should I focus on Reddit mentions or technical fixes first?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Always pass the three verifiable technical checks first: confirm OAI-SearchBot gets HTTP 200, make sure the page has citable definitions and numbers, and verify your llms.txt and sitemap point to live canonical URLs. Off-site community mentions help most after your own pages are crawlable and extractable."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How can I tell if my fixes increased ChatGPT citations?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A free single-page readiness auditor only checks on-page structure. To measure whether your domain actually gains cited links across buyer prompts over multiple days or weeks, use a dedicated multi-day prompt monitor such as SE Ranking AI Visibility."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand-link" href="./" aria-label="CitePulse GEO Home">
+        <img src="./assets/logo.svg" alt="CitePulse GEO">
+      </a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="./">Free Toolkit</a>
+        <a href="./best-geo-tools-2026.html">Best GEO Tools (2026)</a>
+        <a href="./llms-txt-guide.html">llms.txt Guide</a>
+        <a href="./robots-txt-ai-crawlers.html">AI Crawlers Matrix</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="disclosure-bar">
+    <div class="container">
+      <p><strong>FTC Affiliate Disclosure:</strong> CitePulse GEO tools are free to use. Outbound links to paid monitoring suites may earn an affiliate commission at no extra cost to you.</p>
+    </div>
+  </div>
+
+  <main class="article-wrap">
+    <h1>Why ChatGPT Is Not Citing My Website: Rule Out These 3 Checks First</h1>
+    <div class="article-meta">Updated November 2026 &bull; 5-minute read &bull; Quick GEO Answer</div>
+
+    <p><strong>Short answer: Before chasing PR or community mentions, rule out three verifiable on-site blockers:</strong> (1) <code>OAI-SearchBot</code> is blocked in <code>robots.txt</code> or challenged by your CDN/WAF; (2) the page contains no extractable definitions, concrete numbers, or structured answers; or (3) your <code>llms.txt</code> and internal navigation point crawlers to thin, redirected, or empty URLs. Off-site authority and Reddit/forum mentions matter—but only after these three checks pass.</p>
+
+    <div class="callout">
+      <strong>Diagnose your page locally in under 60 seconds:</strong> Run your HTML through our <a href="./#auditor">Free GEO Readiness Auditor &rarr;</a>, then verify your <a href="./#robots">AI crawler robots.txt rules &rarr;</a> and <a href="./#llmstxt">llms.txt manifest &rarr;</a>.
+    </div>
+
+    <h2>Diagnostic Triage Table: 3 Verifiable Blockers Before Off-Site Authority</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Check Order</th>
+            <th>Likely Blocker</th>
+            <th>How to Verify in 2 Minutes</th>
+            <th>Direct Fix</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>1. Crawl Access</strong></td>
+            <td><code>OAI-SearchBot</code> disallowed in <code>robots.txt</code> or blocked (403/429) by Cloudflare/WAF</td>
+            <td>Inspect <code>/robots.txt</code> and server/CDN firewall logs for <code>OAI-SearchBot</code></td>
+            <td>Explicitly allow <code>OAI-SearchBot</code> &amp; <code>ChatGPT-User</code>; allowlist verified OpenAI search IPs</td>
+          </tr>
+          <tr>
+            <td><strong>2. Extractable Facts</strong></td>
+            <td>Page is fluffy sales copy, JS-only SPA shell, or lacks numbers, tables, and clear definitions</td>
+            <td>Paste raw HTML into <a href="./#auditor">CitePulse GEO Auditor</a> and check Entity &amp; Fact Density</td>
+            <td>Lead with a 2-sentence direct answer, add a verifiable comparison table, and ship visible Q&amp;A + JSON-LD</td>
+          </tr>
+          <tr>
+            <td><strong>3. Manifest &amp; Link Hygiene</strong></td>
+            <td><code>llms.txt</code> or sitemap lists empty pages, 301 chains, 404s, or login-gated URLs</td>
+            <td>Validate <code>/llms.txt</code> in our <a href="./#llmstxt">Spec Validator</a> and check HTTP 200 on every listed URL</td>
+            <td>Point <code>llms.txt</code> exclusively to live, public, high-signal canonical URLs</td>
+          </tr>
+          <tr>
+            <td><strong>4. Off-Site Signals</strong></td>
+            <td>Domain has few external references, reviews, or community discussions for the topic</td>
+            <td>Search your brand + category on Google, Reddit, and industry directories</td>
+            <td>After checks 1&ndash;3 pass, publish transparent case studies and earn real third-party citations</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>Why Passing a Free Single-Page Audit Is Only Half the Picture</h2>
+    <p>A free client-side readiness audit tells you whether a single page is technically clean, structured, and easy for an AI retriever to parse right now. What a static page checker cannot do is query ChatGPT Search, Perplexity, and Google AI Overviews every day across dozens of buyer prompts to measure your real <strong>citation share over time</strong>. Once your on-page checks pass, tracking live prompt citations over multiple weeks is where a dedicated paid monitor such as <a href="#" data-affiliate="seranking" data-placement="chatgpt_not_citing_inline">SE Ranking AI Visibility</a> earns its keep.</p>
+
+    <h2>Reproducible 15-Minute Recovery Workflow</h2>
+    <ol>
+      <li><strong>Audit your crawler rules:</strong> Use the <a href="./should-i-block-gptbot.html">GPTBot vs. OAI-SearchBot policy guide</a> and generate a clean root <code>robots.txt</code>.</li>
+      <li><strong>Rewrite the top 150 words of your target URL:</strong> State clearly who the product/answer is for, give the direct verdict, and back it with at least 2&ndash;3 concrete numbers or dated facts.</li>
+      <li><strong>Add 3 visible FAQs + matching JSON-LD:</strong> Follow our <a href="./faqpage-schema-ai-citations.html">FAQPage schema checklist</a> and confirm your readiness score clears 80+ in the <a href="./#auditor">GEO Auditor</a>.</li>
+      <li><strong>Monitor multi-day citation movement:</strong> Log a baseline set of 10&ndash;20 target prompts in <a href="#" data-affiliate="seranking" data-placement="chatgpt_not_citing_steps">SE Ranking AI Visibility</a> and re-check after 14&ndash;28 days so you know whether edits actually moved real citations.</li>
+    </ol>
+
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-list">
+      <details class="faq-item" open>
+        <summary>Why is ChatGPT not citing my website even though it ranks on Google?</summary>
+        <p>The most common technical causes are blocking <code>OAI-SearchBot</code> in <code>robots.txt</code> or a CDN firewall, rendering core facts only after client-side JavaScript execution, or publishing generic marketing prose without concrete definitions, numbers, or tables an answer engine can extract cleanly.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Should I focus on Reddit mentions or technical fixes first?</summary>
+        <p>Always pass the three verifiable technical checks first: confirm <code>OAI-SearchBot</code> gets HTTP 200, make sure the page has citable definitions and numbers, and verify your <code>llms.txt</code> and sitemap point to live canonical URLs. Off-site community mentions help most after your own pages are crawlable and extractable.</p>
+      </details>
+      <details class="faq-item">
+        <summary>How can I tell if my fixes increased ChatGPT citations?</summary>
+        <p>A free single-page readiness auditor only checks on-page structure. To measure whether your domain actually gains cited links across buyer prompts over multiple days or weeks, use a dedicated multi-day prompt monitor such as SE Ranking AI Visibility.</p>
+      </details>
+    </div>
+
+    <div class="callout">
+      <strong>On-page checks done? Measure real citation share across days:</strong> Audit single-page readiness here for free, then track daily ChatGPT Search and Google AI Overview citations with <a href="#" data-affiliate="seranking" data-placement="chatgpt_not_citing_callout">SE Ranking AI Visibility &rarr;</a>.
+    </div>
+
+    <div class="btn-row">
+      <a class="btn btn-primary" href="./#auditor">Run Free Page Readiness Audit &rarr;</a>
+      <a class="btn btn-secondary" href="./should-i-block-gptbot.html">Check GPTBot vs OAI-SearchBot Policy &rarr;</a>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <strong>CitePulse GEO</strong> &mdash; Free AI Search Visibility &amp; GEO Audit Toolkit.
+      </div>
+      <div class="footer-links">
+        <a href="./#auditor">GEO Auditor</a>
+        <a href="./#llmstxt">llms.txt Generator</a>
+        <a href="./#robots">robots.txt Builder</a>
+        <a href="./best-geo-tools-2026.html">Best GEO Tools</a>
+        <a href="./llms-txt-guide.html">llms.txt Guide</a>
+        <a href="./robots-txt-ai-crawlers.html">AI Crawlers Guide</a>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="./assets/app.js"></script>
+</body>
+</html>

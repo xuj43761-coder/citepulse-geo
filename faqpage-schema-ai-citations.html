@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FAQPage Schema for AI Citations: Visible Q&amp;A + JSON-LD Rules (2026) — CitePulse GEO</title>
+  <meta name="description" content="Write visible Q&A answers in your page HTML first, then mirror those exact questions in FAQPage JSON-LD. Never add hidden questions. Learn how it lifts GEO audit readiness.">
+  <link rel="canonical" href="https://xuj43761-coder.github.io/citepulse-geo/faqpage-schema-ai-citations.html">
+  <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="FAQPage Schema for AI Citations: Visible Q&amp;A + JSON-LD Rules (2026)">
+  <meta property="og:description" content="Why visible HTML Q&A blocks paired with matching FAQPage JSON-LD separate 97/100 GEO-ready pages from 12/100 thin pages.">
+  <meta property="og:url" content="https://xuj43761-coder.github.io/citepulse-geo/faqpage-schema-ai-citations.html">
+  <meta property="og:image" content="https://xuj43761-coder.github.io/citepulse-geo/assets/og-card.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://xuj43761-coder.github.io/citepulse-geo/assets/og-card.png">
+  <link rel="stylesheet" href="./assets/styles.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "FAQPage Schema for AI Citations: Visible Q&A + JSON-LD Rules (2026)",
+    "description": "Practical implementation guide showing how visible HTML Q&A sections mirrored in FAQPage JSON-LD improve structural extractability for AI search engines.",
+    "datePublished": "2026-11-22",
+    "dateModified": "2026-11-22",
+    "author": {
+      "@type": "Organization",
+      "name": "CitePulse GEO"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "CitePulse GEO"
+    },
+    "mainEntityOfPage": "https://xuj43761-coder.github.io/citepulse-geo/faqpage-schema-ai-citations.html"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Should I add FAQPage JSON-LD for questions that are not visible on the page?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Every question and answer inside your FAQPage JSON-LD must match visible text rendered in the page HTML. Hidden or mismatched structured data violates search guidelines and reduces trust."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does FAQPage schema still matter for AI citations even if Google limited FAQ rich results?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Even when Google Search restricts visual FAQ accordion snippets to select sites, clean visible Q&A blocks paired with valid FAQPage JSON-LD give AI retrieval pipelines explicit question-answer boundaries that are easy to extract and cite."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How many FAQ items should a single landing page include?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Aim for 3 to 5 high-intent questions that real buyers ask about pricing, limits, compatibility, or implementation—each answered in 40 to 90 words with concrete facts rather than marketing fluff."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand-link" href="./" aria-label="CitePulse GEO Home">
+        <img src="./assets/logo.svg" alt="CitePulse GEO">
+      </a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="./">Free Toolkit</a>
+        <a href="./best-geo-tools-2026.html">Best GEO Tools (2026)</a>
+        <a href="./llms-txt-guide.html">llms.txt Guide</a>
+        <a href="./robots-txt-ai-crawlers.html">AI Crawlers Matrix</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="disclosure-bar">
+    <div class="container">
+      <p><strong>FTC Affiliate Disclosure:</strong> CitePulse GEO tools are free to use. Outbound links to paid monitoring suites may earn an affiliate commission at no extra cost to you.</p>
+    </div>
+  </div>
+
+  <main class="article-wrap">
+    <h1><code>FAQPage</code> Schema for AI Citations: Visible Q&amp;A First, JSON-LD Second</h1>
+    <div class="article-meta">Updated November 2026 &bull; 4-minute read &bull; Quick GEO Answer</div>
+
+    <p><strong>Short answer: Write visible Q&amp;A blocks in your HTML first, then mirror those exact questions and answers in <code>FAQPage</code> JSON-LD.</strong> Never stuff unrendered questions into a JSON-LD script block. In our deterministic <a href="./#auditor">100-Point GEO Auditor</a>, pairing visible question headings with valid JSON-LD is one of the sharpest structural gaps between our <strong>97/100 reference sample</strong> and our <strong>12/100 thin-page sample</strong>.</p>
+
+    <div class="callout">
+      <strong>Check your page's JSON-LD &amp; FAQ structure free:</strong> Paste your HTML into our <a href="./#auditor">GEO 100-Point Citation Readiness Auditor &rarr;</a> to verify both visible Q&amp;A blocks and schema markup locally in your browser.
+    </div>
+
+    <h2>Visible HTML vs. <code>FAQPage</code> JSON-LD Checklist</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Signal</th>
+            <th>High-Readiness Pattern (97/100 Sample)</th>
+            <th>Thin / Broken Pattern (12/100 Sample)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Visible Q&amp;A in DOM</strong></td>
+            <td>3&ndash;5 concrete questions rendered in <code>&lt;details&gt;</code>, <code>&lt;h3&gt;</code>, or FAQ sections</td>
+            <td>No question headings or only marketing slogans</td>
+          </tr>
+          <tr>
+            <td><strong>Answer Specificity</strong></td>
+            <td>40&ndash;90 word direct answers with numbers, limits, or steps</td>
+            <td>Vague one-liners ("Contact sales to learn more")</td>
+          </tr>
+          <tr>
+            <td><strong>JSON-LD Parity</strong></td>
+            <td>Every <code>Question</code> + <code>acceptedAnswer</code> matches visible copy</td>
+            <td>Missing JSON-LD, syntax errors, or hidden questions not on page</td>
+          </tr>
+          <tr>
+            <td><strong>Companion Entity Schema</strong></td>
+            <td>Combined with <code>Article</code>, <code>SoftwareApplication</code>, or <code>Organization</code></td>
+            <td>Only bare <code>&lt;title&gt;</code> and <code>&lt;meta description&gt;</code></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>Minimal Valid <code>FAQPage</code> JSON-LD Template</h2>
+    <p>Keep the JSON-LD text aligned with the visible FAQ items on your page. Validate syntax before deploying so a stray trailing comma does not invalidate the entire script block.</p>
+
+    <pre class="code-output">&lt;script type="application/ld+json"&gt;
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How fast does CitePulse GEO audit a page?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Audits run deterministically in your local browser in under 100 milliseconds with zero sign-up or server uploads."
+      }
+    }
+  ]
+}
+&lt;/script&gt;</pre>
+
+    <h2>4 Steps to Ship Clean FAQ Schema Across Key Pages</h2>
+    <ol>
+      <li><strong>Collect 3&ndash;5 narrow buyer questions:</strong> Pull exact phrasing from sales calls, support tickets, or search autocomplete (pricing thresholds, setup requirements, compatibility limits).</li>
+      <li><strong>Render visible HTML answers first:</strong> Use semantic elements (<code>&lt;section&gt;</code>, <code>&lt;details&gt;&lt;summary&gt;</code>, or <code>&lt;h3&gt;</code> + <code>&lt;p&gt;</code>) and lead every answer with a plain verdict in the first sentence.</li>
+      <li><strong>Mirror into <code>FAQPage</code> JSON-LD and test locally:</strong> Paste the rendered HTML into the <a href="./#auditor">CitePulse GEO Auditor</a> to confirm your JSON-LD parses cleanly and your FAQ Structure score improves.</li>
+      <li><strong>Crawl at site scale to catch broken templates:</strong> Once individual templates pass, use a full technical site audit such as <a href="#" data-affiliate="seranking" data-placement="faqpage_guide_inline">SE Ranking Website Audit</a> to verify that crawlers actually index your structured data across every deployed URL without rendering errors.</li>
+    </ol>
+
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-list">
+      <details class="faq-item" open>
+        <summary>Should I add FAQPage JSON-LD for questions that are not visible on the page?</summary>
+        <p>No. Every question and answer inside your <code>FAQPage</code> JSON-LD must match visible text rendered in the page HTML. Hidden or mismatched structured data violates search guidelines and reduces trust.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Does FAQPage schema still matter for AI citations even if Google limited FAQ rich results?</summary>
+        <p>Yes. Even when Google Search restricts visual FAQ accordion snippets to select sites, clean visible Q&amp;A blocks paired with valid <code>FAQPage</code> JSON-LD give AI retrieval pipelines explicit question-answer boundaries that are easy to extract and cite.</p>
+      </details>
+      <details class="faq-item">
+        <summary>How many FAQ items should a single landing page include?</summary>
+        <p>Aim for 3 to 5 high-intent questions that real buyers ask about pricing, limits, compatibility, or implementation—each answered in 40 to 90 words with concrete facts rather than marketing fluff.</p>
+      </details>
+    </div>
+
+    <div class="callout">
+      <strong>Want to verify structured data crawling across your whole domain?</strong> After checking a single page here for free, run a full technical schema crawl and AI citation check in <a href="#" data-affiliate="seranking" data-placement="faqpage_guide_callout">SE Ranking &rarr;</a> instead of paying for another one-page scorer.
+    </div>
+
+    <div class="btn-row">
+      <a class="btn btn-primary" href="./#auditor">Audit Your Schema &amp; FAQ Free &rarr;</a>
+      <a class="btn btn-secondary" href="./what-is-a-good-geo-score.html">See What a Good GEO Score Means &rarr;</a>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <strong>CitePulse GEO</strong> &mdash; Free AI Search Visibility &amp; GEO Audit Toolkit.
+      </div>
+      <div class="footer-links">
+        <a href="./#auditor">GEO Auditor</a>
+        <a href="./#llmstxt">llms.txt Generator</a>
+        <a href="./#robots">robots.txt Builder</a>
+        <a href="./best-geo-tools-2026.html">Best GEO Tools</a>
+        <a href="./llms-txt-guide.html">llms.txt Guide</a>
+        <a href="./robots-txt-ai-crawlers.html">AI Crawlers Guide</a>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="./assets/app.js"></script>
+</body>
+</html>

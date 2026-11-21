@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Should I Block GPTBot but Allow OAI-SearchBot? (2026 Policy Guide) — CitePulse GEO</title>
+  <meta name="description" content="Yes for most SaaS and content sites: allow OAI-SearchBot for live ChatGPT Search citations and disallow GPTBot if you want to opt out of model training. Copy-paste robots.txt rules inside.">
+  <link rel="canonical" href="https://xuj43761-coder.github.io/citepulse-geo/should-i-block-gptbot.html">
+  <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Should I Block GPTBot but Allow OAI-SearchBot? (2026 Policy Guide)">
+  <meta property="og:description" content="Allow OAI-SearchBot for live ChatGPT citations while disallowing GPTBot for model training—plus CDN/WAF checks and a free robots.txt builder.">
+  <meta property="og:url" content="https://xuj43761-coder.github.io/citepulse-geo/should-i-block-gptbot.html">
+  <meta property="og:image" content="https://xuj43761-coder.github.io/citepulse-geo/assets/og-card.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://xuj43761-coder.github.io/citepulse-geo/assets/og-card.png">
+  <link rel="stylesheet" href="./assets/styles.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Should I Block GPTBot but Allow OAI-SearchBot? (2026 Policy Guide)",
+    "description": "Clear robots.txt decision guide explaining why most publishers allow OAI-SearchBot and ChatGPT-User for citations while disallowing GPTBot for model training.",
+    "datePublished": "2026-11-22",
+    "dateModified": "2026-11-22",
+    "author": {
+      "@type": "Organization",
+      "name": "CitePulse GEO"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "CitePulse GEO"
+    },
+    "mainEntityOfPage": "https://xuj43761-coder.github.io/citepulse-geo/should-i-block-gptbot.html"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Should I block GPTBot but allow OAI-SearchBot?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "For most SaaS companies, agencies, and publishers, yes. Allowing OAI-SearchBot and ChatGPT-User keeps your site eligible for live ChatGPT Search citations and referral clicks, while disallowing GPTBot opts your pages out of OpenAI foundation model training."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Will disallowing GPTBot remove my site from ChatGPT Search answers?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No, provided OAI-SearchBot is explicitly allowed in robots.txt and not blocked by your CDN or WAF. OpenAI documents GPTBot and OAI-SearchBot as separate user-agents with distinct roles."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why should I avoid one blanket rule that blocks all AI bots?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Blanket AI blocks cut off live retrieval bots like OAI-SearchBot, PerplexityBot, and Claude-SearchBot alongside training scrapers, eliminating high-intent citation traffic from AI search engines."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand-link" href="./" aria-label="CitePulse GEO Home">
+        <img src="./assets/logo.svg" alt="CitePulse GEO">
+      </a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="./">Free Toolkit</a>
+        <a href="./best-geo-tools-2026.html">Best GEO Tools (2026)</a>
+        <a href="./llms-txt-guide.html">llms.txt Guide</a>
+        <a href="./robots-txt-ai-crawlers.html">AI Crawlers Matrix</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="disclosure-bar">
+    <div class="container">
+      <p><strong>FTC Affiliate Disclosure:</strong> CitePulse GEO tools are free to use. Outbound links to paid monitoring suites may earn an affiliate commission at no extra cost to you.</p>
+    </div>
+  </div>
+
+  <main class="article-wrap">
+    <h1>Should I Block <code>GPTBot</code> but Allow <code>OAI-SearchBot</code>?</h1>
+    <div class="article-meta">Updated November 2026 &bull; 4-minute read &bull; Quick GEO Answer</div>
+
+    <p><strong>Short answer: Yes, for most commercial websites and publishers.</strong> If you want ChatGPT Search to cite your pages and send referral clicks, explicitly <strong>Allow <code>OAI-SearchBot</code></strong> (and <code>ChatGPT-User</code>). If you want to opt out of foundation model training datasets, explicitly <strong>Disallow <code>GPTBot</code></strong>. Name each OpenAI user-agent individually in <code>robots.txt</code> instead of using one blanket rule to block every AI crawler.</p>
+
+    <div class="callout">
+      <strong>Generate a split AI search vs. training policy in seconds:</strong> Open our <a href="./#robots">Free AI Crawler robots.txt Builder &rarr;</a> and select the <strong>Allow AI Search, Block Training</strong> preset.
+    </div>
+
+    <h2>How OpenAI Splits Its Three Crawlers</h2>
+    <p>A common technical GEO error is treating every OpenAI crawler as a single scraper. OpenAI separates search indexing, user-triggered browsing, and training collection across three distinct user-agents. Mixing them up—or blocking OpenAI IP ranges at the firewall level—silently removes your brand from ChatGPT Search citations.</p>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>User-Agent</th>
+            <th>Primary Purpose</th>
+            <th>If Blocked, What Happens?</th>
+            <th>Recommended Rule</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>OAI-SearchBot</code></td>
+            <td>Indexes pages for live ChatGPT Search links and summaries</td>
+            <td>Your domain stops appearing as a cited link in ChatGPT Search</td>
+            <td><strong>Allow: /</strong></td>
+          </tr>
+          <tr>
+            <td><code>ChatGPT-User</code></td>
+            <td>Fetches a page on demand when a user pastes your URL or triggers browsing</td>
+            <td>ChatGPT cannot read your live pricing or docs during buyer research</td>
+            <td><strong>Allow: /</strong></td>
+          </tr>
+          <tr>
+            <td><code>GPTBot</code></td>
+            <td>Collects public web data used to train OpenAI foundation models</td>
+            <td>Opts content out of future training runs without blocking live search citations</td>
+            <td><strong>Disallow: /</strong> (to opt out of training)</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>Copy-Paste <code>robots.txt</code> Block (Allow Citations, Block Training)</h2>
+    <p>Place explicit user-agent directives above or alongside your default wildcard rule so every crawler sees an unambiguous policy. Keep private admin routes disallowed for all bots.</p>
+
+    <pre class="code-output">User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /account/
+
+# Allow live ChatGPT Search citations &amp; on-demand browsing
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+# Opt out of OpenAI foundation model training
+User-agent: GPTBot
+Disallow: /</pre>
+
+    <h2>4 Reproducible Steps to Verify Your Split Policy</h2>
+    <ol>
+      <li><strong>Build and publish <code>/robots.txt</code>:</strong> Generate your complete matrix (including Anthropic's <code>Claude-SearchBot</code> vs. <code>ClaudeBot</code> and <code>PerplexityBot</code>) in the <a href="./#robots">robots.txt Policy Builder</a> and deploy it at your root domain.</li>
+      <li><strong>Verify live HTTP 200 delivery:</strong> Fetch <code>https://yourdomain.com/robots.txt</code> in an incognito browser or with <code>curl -I</code> and confirm it returns <code>200 OK</code> with <code>text/plain</code> content.</li>
+      <li><strong>Audit Cloudflare / WAF bot rules:</strong> Even a valid <code>robots.txt</code> fails if a CDN security rule issues HTTP 403 or JavaScript challenges to <code>OAI-SearchBot</code>. Check firewall events for OpenAI's published crawler IPs and allowlist verified search bots.</li>
+      <li><strong>Confirm real citations after indexing:</strong> A static robots file grants permission, not visibility. Once your crawler policy is clean, track whether ChatGPT Search and Google AI Overviews actually cite your target URLs over time using a multi-engine tracker such as <a href="#" data-affiliate="seranking" data-placement="gptbot_guide_inline">SE Ranking AI Visibility</a>.</li>
+    </ol>
+
+    <h2>When Should You Allow <code>GPTBot</code> Too?</h2>
+    <p>Some early-stage B2B SaaS tools, open-source projects, and documentation hubs intentionally allow <code>GPTBot</code> as well as <code>OAI-SearchBot</code>. Their goal is broad brand recall inside future base models, not just live retrieval. Choose that "Open All AI" stance only if your public docs are free marketing assets and you have no licensing or paywall restrictions against training ingestion.</p>
+
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-list">
+      <details class="faq-item" open>
+        <summary>Should I block GPTBot but allow OAI-SearchBot?</summary>
+        <p>For most SaaS companies, agencies, and publishers, yes. Allowing <code>OAI-SearchBot</code> and <code>ChatGPT-User</code> keeps your site eligible for live ChatGPT Search citations and referral clicks, while disallowing <code>GPTBot</code> opts your pages out of OpenAI foundation model training.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Will disallowing GPTBot remove my site from ChatGPT Search answers?</summary>
+        <p>No, provided <code>OAI-SearchBot</code> is explicitly allowed in <code>robots.txt</code> and not blocked by your CDN or WAF. OpenAI documents <code>GPTBot</code> and <code>OAI-SearchBot</code> as separate user-agents with distinct roles.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Why should I avoid one blanket rule that blocks all AI bots?</summary>
+        <p>Blanket AI blocks cut off live retrieval bots like <code>OAI-SearchBot</code>, <code>PerplexityBot</code>, and <code>Claude-SearchBot</code> alongside training scrapers, eliminating high-intent citation traffic from AI search engines.</p>
+      </details>
+    </div>
+
+    <div class="callout">
+      <strong>Need ongoing proof that ChatGPT is citing your pages?</strong> Updating <code>robots.txt</code> is step one; <a href="#" data-affiliate="seranking" data-placement="gptbot_guide_callout">SE Ranking AI Visibility &rarr;</a> tracks live brand mentions and cited URLs across ChatGPT and Google AI Overviews every day.
+    </div>
+
+    <div class="btn-row">
+      <a class="btn btn-primary" href="./#robots">Generate Your robots.txt Policy &rarr;</a>
+      <a class="btn btn-secondary" href="./robots-txt-ai-crawlers.html">Full 9-Bot Crawler Matrix &rarr;</a>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <strong>CitePulse GEO</strong> &mdash; Free AI Search Visibility &amp; GEO Audit Toolkit.
+      </div>
+      <div class="footer-links">
+        <a href="./#auditor">GEO Auditor</a>
+        <a href="./#llmstxt">llms.txt Generator</a>
+        <a href="./#robots">robots.txt Builder</a>
+        <a href="./best-geo-tools-2026.html">Best GEO Tools</a>
+        <a href="./llms-txt-guide.html">llms.txt Guide</a>
+        <a href="./robots-txt-ai-crawlers.html">AI Crawlers Guide</a>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="./assets/app.js"></script>
+</body>
+</html>

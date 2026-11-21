@@ -22,7 +22,7 @@ export const AFFILIATE_PROGRAMS = {
     badge: 'Best for AI Content + Citations',
     category: 'GEO Audit & Content Optimization',
     startingPrice: 'From $79/mo',
-    commissionSummary: '20% recurring (12 mo) • 60-day cookie',
+    commissionSummary: '20% recurring (12 mo) • 30-day cookie',
     bestFor: 'Growth teams fixing missing entity answers and publishing citation-ready landing pages fast',
     ctaLabel: 'Explore Writesonic GEO',
     affiliateUrl: 'https://writesonic.com/geo',
@@ -69,7 +69,7 @@ export const AFFILIATE_PROGRAMS = {
     commissionSummary: '25%–35% lifetime recurring • instant approval',
     bestFor: 'Indie makers discovering low-competition question queries that trigger AI citations quickly',
     ctaLabel: 'Try Mangools Free',
-    affiliateUrl: 'https://mangools.com/',
+    affiliateUrl: 'https://mangools.com/#a6b01bec06aee08900128e011',
   },
 };
 
