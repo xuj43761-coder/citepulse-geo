@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Complete llms.txt Guide (2026): Specification, Examples &amp; Deployment — CitePulse GEO</title>
+  <meta name="description" content="Learn how to write, validate, and deploy a spec-compliant /llms.txt file in 2026 for ChatGPT, Claude, and Perplexity. Includes free generator and deployment steps for GitHub Pages, Cloudflare, Vercel, and WordPress.">
+  <link rel="canonical" href="https://xuj43761-coder.github.io/citepulse-geo/llms-txt-guide.html">
+  <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Complete llms.txt Guide (2026): Specification, Examples &amp; Deployment">
+  <meta property="og:description" content="Step-by-step llms.txt Markdown spec, validation checklist, and zero-cost deployment instructions.">
+  <meta property="og:url" content="https://xuj43761-coder.github.io/citepulse-geo/llms-txt-guide.html">
+  <meta property="og:image" content="https://xuj43761-coder.github.io/citepulse-geo/assets/og-card.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://xuj43761-coder.github.io/citepulse-geo/assets/og-card.png">
+  <link rel="stylesheet" href="./assets/styles.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Complete llms.txt Guide (2026): Specification, Examples & Deployment",
+    "description": "How to structure, validate, and host /llms.txt so AI agents and search engines accurately understand your site's canonical pages.",
+    "datePublished": "2026-11-21",
+    "dateModified": "2026-11-21",
+    "author": {
+      "@type": "Organization",
+      "name": "CitePulse GEO"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "CitePulse GEO"
+    },
+    "mainEntityOfPage": "https://xuj43761-coder.github.io/citepulse-geo/llms-txt-guide.html"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Where should I host my llms.txt file?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Host llms.txt at the root of your domain (https://yourdomain.com/llms.txt) served as UTF-8 text/plain or text/markdown with HTTP 200 status."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does llms.txt replace sitemap.xml or robots.txt?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. robots.txt governs crawler access, sitemap.xml lists every indexable URL for search engines, and llms.txt provides a curated, human- and LLM-readable map of your highest-value documentation, pricing, and product pages."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand-link" href="./" aria-label="CitePulse GEO Home">
+        <img src="./assets/logo.svg" alt="CitePulse GEO">
+      </a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="./">Free Toolkit</a>
+        <a href="./best-geo-tools-2026.html">Best GEO Tools (2026)</a>
+        <a href="./llms-txt-guide.html" aria-current="page">llms.txt Guide</a>
+        <a href="./robots-txt-ai-crawlers.html">AI Crawlers Matrix</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="disclosure-bar">
+    <div class="container">
+      <p><strong>FTC Affiliate Disclosure:</strong> CitePulse GEO tools are free to use. Outbound partner links on this page may earn an affiliate commission at no extra cost to you.</p>
+    </div>
+  </div>
+
+  <main class="article-wrap">
+    <h1>Complete <code>llms.txt</code> Guide (2026): Specification, Examples &amp; Deployment</h1>
+    <div class="article-meta">Updated November 2026 &bull; 5-minute read &bull; Technical GEO Reference</div>
+
+    <p><strong>What is <code>llms.txt</code>?</strong> It is a lightweight Markdown file hosted at <code>/llms.txt</code> that gives Large Language Models, AI coding assistants, and retrieval agents a clean, curated index of your most authoritative pages—without forcing them to parse navigation chrome, cookie banners, or client-side scripts.</p>
+
+    <div class="callout">
+      <strong>Skip manual formatting:</strong> Build and spec-validate your file in 30 seconds with our <a href="./#llmstxt">Free llms.txt Generator &amp; Validator &rarr;</a>
+    </div>
+
+    <h2>Required <code>llms.txt</code> Markdown Structure</h2>
+    <p>Following the widely adopted <code>llmstxt.org</code> convention, a valid <code>llms.txt</code> file contains five clean elements in order:</p>
+    <ol>
+      <li><strong>Single H1 Title (<code># Brand Name</code>)</strong> &mdash; Required first line identifying your product or documentation site.</li>
+      <li><strong>Summary Blockquote (<code>&gt; ...</code>)</strong> &mdash; One concise sentence explaining what you offer and who you serve.</li>
+      <li><strong>Optional Context Paragraph</strong> &mdash; Key facts (pricing model, supported integrations, compliance standards) that prevent hallucinated product specs.</li>
+      <li><strong>H2 Section Headings (<code>## Core Docs</code>, <code>## Pricing &amp; Security</code>)</strong> &mdash; Logical grouping of your highest-signal pages.</li>
+      <li><strong>Absolute HTTPS Markdown Links</strong> &mdash; Formatted as <code>- [Page Title](https://example.com/page): Short description of facts on this page.</code></li>
+    </ol>
+
+    <h2>Copy-Paste Example</h2>
+    <pre class="code-output"># Acme Cloud
+
+&gt; Automated SOC 2 Type II and ISO 27001 compliance platform for B2B SaaS startups.
+
+Acme Cloud connects to AWS, GitHub, and Okta in under 15 minutes with transparent annual pricing starting at $6,500/year.
+
+## Core Pages
+- [SOC 2 Automation Overview](https://acmecloud.example/soc2-automation): Scope, continuous control monitoring, and audit timeline.
+- [Pricing &amp; Plans](https://acmecloud.example/pricing): Exact plan tiers, seat limits, and auditor bundle options.
+- [Security &amp; Subprocessors](https://acmecloud.example/security): Encryption standards, data residency, and trust center links.
+
+## Optional
+- [XML Sitemap](https://acmecloud.example/sitemap.xml): Full list of public URLs.</pre>
+
+    <h2>Common Validation Mistakes to Avoid</h2>
+    <ul>
+      <li><strong>Using relative links (<code>/pricing</code>):</strong> Always use full <code>https://</code> URLs so agents reading raw text outside your origin can resolve pages unambiguously.</li>
+      <li><strong>Dumping 500 blog URLs:</strong> That is what <code>sitemap.xml</code> is for. Keep <code>llms.txt</code> focused on your top 8–25 canonical product, pricing, documentation, and benchmark pages.</li>
+      <li><strong>Blocking AI crawlers from reading it:</strong> Ensure your <code>robots.txt</code> does not disallow <code>/llms.txt</code> for search bots (<a href="./#robots">check your policy here</a>).</li>
+    </ul>
+
+    <h2>How to Deploy <code>/llms.txt</code> in 2 Minutes</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Hosting Stack</th>
+            <th>Where to Place <code>llms.txt</code></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>GitHub Pages / Static HTML</strong></td>
+            <td>Drop <code>llms.txt</code> directly in the repository root (or <code>docs/</code> publish folder).</td>
+          </tr>
+          <tr>
+            <td><strong>Next.js / Vite / Astro / Vercel</strong></td>
+            <td>Place in <code>public/llms.txt</code> so it serves statically at <code>/llms.txt</code>.</td>
+          </tr>
+          <tr>
+            <td><strong>Cloudflare Pages / Netlify</strong></td>
+            <td>Place in your static output directory (e.g., <code>public/</code> or <code>dist/</code>).</td>
+          </tr>
+          <tr>
+            <td><strong>WordPress</strong></td>
+            <td>Upload to your web root via SFTP/host file manager or enable via an SEO plugin's static file module.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout">
+      <strong>Verify Whether AI Search Engines Cite Those Exact URLs:</strong> Once <code>/llms.txt</code> is live, track brand mentions and URL citations across ChatGPT, Perplexity, and Google AI Overviews with <a href="#" data-affiliate="seranking" data-placement="llmstxt_guide">SE Ranking (SE Visible)</a> or <a href="#" data-affiliate="otterly" data-placement="llmstxt_guide">Otterly.AI</a>.
+    </div>
+
+    <div class="btn-row">
+      <a class="btn btn-primary" href="./#llmstxt">Open Free llms.txt Generator &rarr;</a>
+      <a class="btn btn-secondary" href="./robots-txt-ai-crawlers.html">Next: AI Crawlers robots.txt Matrix &rarr;</a>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <strong>CitePulse GEO</strong> &mdash; Free AI Search Visibility &amp; GEO Audit Toolkit.
+      </div>
+      <div class="footer-links">
+        <a href="./#auditor">GEO Auditor</a>
+        <a href="./#llmstxt">llms.txt Generator</a>
+        <a href="./#robots">robots.txt Builder</a>
+        <a href="./best-geo-tools-2026.html">Best GEO Tools</a>
+        <a href="./robots-txt-ai-crawlers.html">AI Crawlers Guide</a>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="./assets/app.js"></script>
+</body>
+</html>

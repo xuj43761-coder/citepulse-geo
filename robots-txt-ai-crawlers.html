@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI Crawlers robots.txt Matrix (2026): Search Citations vs. Training Bots — CitePulse GEO</title>
+  <meta name="description" content="2026 reference directory of AI search and model training user-agents (OAI-SearchBot, ChatGPT-User, GPTBot, Claude-SearchBot, ClaudeBot, PerplexityBot, Google-Extended, Applebot-Extended, CCBot) plus free robots.txt generator.">
+  <link rel="canonical" href="https://xuj43761-coder.github.io/citepulse-geo/robots-txt-ai-crawlers.html">
+  <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="AI Crawlers robots.txt Matrix (2026): Search Citations vs. Training Bots">
+  <meta property="og:description" content="Separate live AI search citation bots from foundation model training crawlers without losing ChatGPT or Perplexity referral traffic.">
+  <meta property="og:url" content="https://xuj43761-coder.github.io/citepulse-geo/robots-txt-ai-crawlers.html">
+  <meta property="og:image" content="https://xuj43761-coder.github.io/citepulse-geo/assets/og-card.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://xuj43761-coder.github.io/citepulse-geo/assets/og-card.png">
+  <link rel="stylesheet" href="./assets/styles.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "AI Crawlers robots.txt Matrix (2026): Search Citations vs. Training Bots",
+    "description": "Complete 2026 matrix separating live AI search citation crawlers from model training bots, with recommended robots.txt rules.",
+    "datePublished": "2026-11-21",
+    "dateModified": "2026-11-21",
+    "author": {
+      "@type": "Organization",
+      "name": "CitePulse GEO"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "CitePulse GEO"
+    },
+    "mainEntityOfPage": "https://xuj43761-coder.github.io/citepulse-geo/robots-txt-ai-crawlers.html"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Does blocking Google-Extended hurt my Google Search rankings?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Google-Extended controls whether your pages are used for Gemini model training and certain grounding controls, whereas Googlebot governs traditional Google Search indexing and ranking."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What happens if I block OAI-SearchBot by mistake?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Blocking OAI-SearchBot prevents your pages from appearing as cited links inside ChatGPT Search answers, cutting off high-intent AI search referral traffic."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand-link" href="./" aria-label="CitePulse GEO Home">
+        <img src="./assets/logo.svg" alt="CitePulse GEO">
+      </a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="./">Free Toolkit</a>
+        <a href="./best-geo-tools-2026.html">Best GEO Tools (2026)</a>
+        <a href="./llms-txt-guide.html">llms.txt Guide</a>
+        <a href="./robots-txt-ai-crawlers.html" aria-current="page">AI Crawlers Matrix</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="disclosure-bar">
+    <div class="container">
+      <p><strong>FTC Affiliate Disclosure:</strong> CitePulse GEO tools are free to use. Outbound links to paid monitoring suites may earn an affiliate commission at no extra cost to you.</p>
+    </div>
+  </div>
+
+  <main class="article-wrap">
+    <h1>AI Crawlers <code>robots.txt</code> Matrix (2026): Search vs. Model Training</h1>
+    <div class="article-meta">Updated November 2026 &bull; 5-minute read &bull; Technical GEO Reference</div>
+
+    <p><strong>The biggest technical GEO mistake in 2026:</strong> Blanket-blocking every AI user-agent in <code>robots.txt</code> or a CDN firewall. Modern AI vendors split their crawlers into two distinct roles—<strong>live AI search/citation bots</strong> (which drive high-intent referral clicks) and <strong>foundation model training crawlers</strong> (which ingest datasets for pre-training).</p>
+
+    <div class="callout">
+      <strong>Generate your exact file in one click:</strong> Use our <a href="./#robots">Free AI Crawler robots.txt Policy Builder &rarr;</a> with 3 tested presets and per-bot overrides.
+    </div>
+
+    <h2>2026 AI Crawler User-Agent Reference Matrix</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>User-Agent</th>
+            <th>Vendor</th>
+            <th>Role</th>
+            <th>Recommended SaaS / Publisher Policy</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>OAI-SearchBot</code></td>
+            <td>OpenAI</td>
+            <td>AI Search / Citations</td>
+            <td><strong>Allow</strong> &mdash; surfaces your links in ChatGPT Search</td>
+          </tr>
+          <tr>
+            <td><code>ChatGPT-User</code></td>
+            <td>OpenAI</td>
+            <td>On-Demand User Browse</td>
+            <td><strong>Allow</strong> &mdash; fetches pages when a buyer asks about your URL</td>
+          </tr>
+          <tr>
+            <td><code>GPTBot</code></td>
+            <td>OpenAI</td>
+            <td>Model Training</td>
+            <td><strong>Disallow</strong> (if opting out of training) or Allow for broad brand recall</td>
+          </tr>
+          <tr>
+            <td><code>Claude-SearchBot</code></td>
+            <td>Anthropic</td>
+            <td>AI Search / Citations</td>
+            <td><strong>Allow</strong> &mdash; enables live citations in Claude Search</td>
+          </tr>
+          <tr>
+            <td><code>ClaudeBot</code></td>
+            <td>Anthropic</td>
+            <td>Model Training</td>
+            <td><strong>Disallow</strong> (if opting out of training)</td>
+          </tr>
+          <tr>
+            <td><code>PerplexityBot</code></td>
+            <td>Perplexity</td>
+            <td>AI Search / Citations</td>
+            <td><strong>Allow</strong> &mdash; indexes pages for Perplexity answer citations</td>
+          </tr>
+          <tr>
+            <td><code>Google-Extended</code></td>
+            <td>Google</td>
+            <td>Training / Grounding Opt-In</td>
+            <td><strong>Disallow</strong> to opt out of Gemini training without touching Google Search</td>
+          </tr>
+          <tr>
+            <td><code>Applebot-Extended</code></td>
+            <td>Apple</td>
+            <td>Model Training</td>
+            <td><strong>Disallow</strong> to opt out of Apple Intelligence training</td>
+          </tr>
+          <tr>
+            <td><code>CCBot</code></td>
+            <td>Common Crawl</td>
+            <td>Open Crawl Corpus</td>
+            <td><strong>Disallow</strong> if you want to restrict third-party pre-training datasets</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>Recommended "Allow AI Search, Block Training" Policy</h2>
+    <pre class="code-output">User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /api/private/
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: GPTBot
+Disallow: /
+
+User-agent: ClaudeBot
+Disallow: /
+
+User-agent: Google-Extended
+Disallow: /
+
+User-agent: Applebot-Extended
+Disallow: /
+
+User-agent: CCBot
+Disallow: /</pre>
+
+    <h2>CDN &amp; WAF Double-Check</h2>
+    <p>Even with a clean <code>robots.txt</code>, Cloudflare Bot Fight Mode or aggressive WAF rules sometimes challenge verified AI search bots with HTTP 403/429 responses. After updating your policy, inspect server access logs for <code>OAI-SearchBot</code> and <code>PerplexityBot</code> HTTP 200 hits, and pair your technical setup with live citation monitoring in <a href="#" data-affiliate="semrush" data-placement="robots_guide">Semrush AI Visibility</a> or <a href="#" data-affiliate="seranking" data-placement="robots_guide">SE Ranking</a>.</p>
+
+    <div class="btn-row">
+      <a class="btn btn-primary" href="./#robots">Build Your robots.txt Now &rarr;</a>
+      <a class="btn btn-secondary" href="./best-geo-tools-2026.html">Compare 6 Paid GEO Monitors &rarr;</a>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <strong>CitePulse GEO</strong> &mdash; Free AI Search Visibility &amp; GEO Audit Toolkit.
+      </div>
+      <div class="footer-links">
+        <a href="./#auditor">GEO Auditor</a>
+        <a href="./#llmstxt">llms.txt Generator</a>
+        <a href="./#robots">robots.txt Builder</a>
+        <a href="./best-geo-tools-2026.html">Best GEO Tools</a>
+        <a href="./llms-txt-guide.html">llms.txt Guide</a>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="./assets/app.js"></script>
+</body>
+</html>

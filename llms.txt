@@ -1,0 +1,18 @@
+# CitePulse GEO
+
+> Free browser-based Generative Engine Optimization (GEO) toolkit for auditing AI search citation readiness, generating spec-compliant llms.txt manifests, and configuring AI crawler robots.txt policies.
+
+All interactive tools run 100% locally in the visitor's browser with zero sign-up required.
+
+## Interactive Tools
+- [GEO 100-Point Citation Readiness Auditor](https://xuj43761-coder.github.io/citepulse-geo/#auditor): Score any HTML or Markdown page across Crawler Hygiene, JSON-LD Schema, Entity Clarity, Fact Density, and FAQ Structure.
+- [llms.txt Generator & Spec Validator](https://xuj43761-coder.github.io/citepulse-geo/#llmstxt): Build and validate spec-compliant /llms.txt files for AI assistants and search crawlers.
+- [AI Crawler robots.txt Policy Builder](https://xuj43761-coder.github.io/citepulse-geo/#robots): Separate live AI search bots (OAI-SearchBot, PerplexityBot, Claude-SearchBot) from model training crawlers (GPTBot, ClaudeBot, Google-Extended, CCBot).
+
+## Guides & Tool Comparisons
+- [Best GEO & AI Visibility Tools 2026](https://xuj43761-coder.github.io/citepulse-geo/best-geo-tools-2026.html): Side-by-side comparison of SE Ranking (SE Visible), Writesonic GEO, Semrush AI Visibility, Surfer AI Tracker, Otterly.AI, and Mangools.
+- [Complete llms.txt Guide (2026)](https://xuj43761-coder.github.io/citepulse-geo/llms-txt-guide.html): Syntax specification, examples, and deployment steps for Cloudflare Pages, Vercel, GitHub Pages, and WordPress.
+- [AI Crawlers robots.txt Matrix (2026)](https://xuj43761-coder.github.io/citepulse-geo/robots-txt-ai-crawlers.html): Complete directory of AI search vs. training user-agents and recommended policies.
+
+## Optional
+- [XML Sitemap](https://xuj43761-coder.github.io/citepulse-geo/sitemap.xml): Canonical list of public CitePulse GEO URLs.

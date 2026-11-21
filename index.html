@@ -1,0 +1,408 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CitePulse GEO — Free AI Search Visibility &amp; GEO Audit Toolkit</title>
+  <meta name="description" content="Free 100% browser-based GEO toolkit: run a 100-point AI citation readiness audit, generate and validate llms.txt, and build AI crawler robots.txt policies with zero sign-up.">
+  <link rel="canonical" href="https://xuj43761-coder.github.io/citepulse-geo/">
+  <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="CitePulse GEO — Free AI Search Visibility &amp; GEO Audit Toolkit">
+  <meta property="og:description" content="Audit your page for ChatGPT, Perplexity, Claude &amp; Google AI Overviews citations, generate spec-compliant llms.txt, and configure AI crawler robots.txt — 100% free in your browser.">
+  <meta property="og:url" content="https://xuj43761-coder.github.io/citepulse-geo/">
+  <meta property="og:image" content="https://xuj43761-coder.github.io/citepulse-geo/assets/og-card.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="CitePulse GEO — Free AI Search Visibility &amp; GEO Audit Toolkit">
+  <meta name="twitter:description" content="100-Point Citation Audit, llms.txt Generator &amp; AI Crawler robots.txt Builder. 100% free, zero sign-up, instant client-side execution.">
+  <meta name="twitter:image" content="https://xuj43761-coder.github.io/citepulse-geo/assets/og-card.png">
+  <link rel="stylesheet" href="./assets/styles.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "CitePulse GEO",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web",
+    "url": "https://xuj43761-coder.github.io/citepulse-geo/",
+    "description": "Free client-side Generative Engine Optimization (GEO) toolkit featuring a 100-point AI citation readiness auditor, llms.txt generator and validator, and AI crawler robots.txt policy builder.",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "featureList": [
+      "100-Point GEO Citation Readiness Auditor across 5 dimensions",
+      "Spec-compliant llms.txt Generator and Validator",
+      "AI Search vs. Model Training robots.txt Policy Builder",
+      "Markdown Audit Report Copy and Download"
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is Generative Engine Optimization (GEO)?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Generative Engine Optimization (GEO) is the practice of structuring web pages, entity definitions, verifiable facts, and machine-readable manifests like JSON-LD and llms.txt so AI search engines such as ChatGPT Search, Perplexity, Claude, and Google AI Overviews accurately retrieve and cite your brand."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does CitePulse GEO send my HTML or proprietary copy to an external server?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Every audit score, llms.txt manifest, and robots.txt policy is computed deterministically inside your local browser using client-side JavaScript. Nothing is uploaded or stored on any backend server."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Should I block GPTBot while allowing OAI-SearchBot in robots.txt?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "For most SaaS companies and publishers, yes. Allowing OAI-SearchBot, ChatGPT-User, Claude-SearchBot, and PerplexityBot preserves live AI search citations and referral traffic, while disallowing GPTBot, ClaudeBot, Google-Extended, and CCBot opts your content out of foundation model training."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How is CitePulse GEO free to use?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "CitePulse GEO runs as a zero-infrastructure static web app and is supported through transparent affiliate partnerships with dedicated paid AI visibility monitoring platforms such as SE Ranking, Writesonic, Semrush, Surfer, Otterly.AI, and Mangools."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand-link" href="./" aria-label="CitePulse GEO Home">
+        <img src="./assets/logo.svg" alt="CitePulse GEO">
+      </a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="./" aria-current="page">Free Toolkit</a>
+        <a href="./best-geo-tools-2026.html">Best GEO Tools (2026)</a>
+        <a href="./llms-txt-guide.html">llms.txt Guide</a>
+        <a href="./robots-txt-ai-crawlers.html">AI Crawlers Matrix</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="disclosure-bar">
+    <div class="container">
+      <p><strong>FTC Affiliate Disclosure:</strong> All tools on CitePulse GEO are 100% free with zero sign-up. Some outbound links to paid AI visibility platforms are affiliate links—if you subscribe through them, we may earn a commission at no extra cost to you.</p>
+    </div>
+  </div>
+
+  <main class="container">
+    <section class="hero">
+      <div class="hero-badge">100% Free &bull; Zero Sign-up &bull; Runs Locally in Your Browser</div>
+      <h1>Audit &amp; Optimize Your Site for AI Search Citations in 60 Seconds</h1>
+      <p class="hero-sub">Score any page across 5 Generative Engine Optimization (GEO) dimensions, generate a spec-compliant <code>llms.txt</code> manifest, and build a clean AI crawler <code>robots.txt</code> policy for ChatGPT Search, Perplexity, Claude, and Google AI Overviews.</p>
+      <div class="trust-row">
+        <span><i class="dot" aria-hidden="true"></i> Deterministic 100-Point Citation Scoring</span>
+        <span><i class="dot" aria-hidden="true"></i> Zero Backend Tracking or Copy Uploads</span>
+        <span><i class="dot" aria-hidden="true"></i> One-Click Markdown, llms.txt &amp; robots.txt Export</span>
+      </div>
+    </section>
+
+    <section class="workspace-card" aria-label="CitePulse GEO Interactive Toolkit">
+      <div class="tool-tabs" role="tablist" aria-label="GEO Tools">
+        <button type="button" class="tool-tab is-active" role="tab" aria-selected="true" data-tab-target="auditor" id="tab-auditor">
+          <span class="tab-num">1</span> GEO Citation Auditor
+        </button>
+        <button type="button" class="tool-tab" role="tab" aria-selected="false" data-tab-target="llmstxt" id="tab-llmstxt">
+          <span class="tab-num">2</span> llms.txt Generator &amp; Validator
+        </button>
+        <button type="button" class="tool-tab" role="tab" aria-selected="false" data-tab-target="robots" id="tab-robots">
+          <span class="tab-num">3</span> AI Crawler robots.txt Builder
+        </button>
+      </div>
+
+      <!-- Tool 1: GEO Citation Readiness Auditor -->
+      <div class="tool-panel is-active" role="tabpanel" aria-labelledby="tab-auditor" data-tab-panel="auditor" id="auditor">
+        <div class="panel-grid">
+          <div>
+            <div class="field">
+              <label for="audit-url">Page URL (optional, included in Markdown export)</label>
+              <input id="audit-url" type="url" placeholder="https://yourdomain.com/product-guide">
+            </div>
+            <div class="field">
+              <label for="audit-input">Paste Raw Page HTML, Markdown, or Article Copy</label>
+              <textarea id="audit-input" class="code-input" rows="16" placeholder="Paste full HTML source (recommended for meta &amp; JSON-LD checks) or Markdown/plain text..."></textarea>
+              <span class="field-hint">Tip: View Page Source (Ctrl/Cmd+U) and paste raw HTML to score canonical tags, OpenGraph, and JSON-LD schema accurately.</span>
+            </div>
+            <div class="btn-row">
+              <button type="button" class="btn btn-primary" id="btn-run-audit">Run 100-Point Audit</button>
+              <button type="button" class="btn btn-secondary btn-sm" id="btn-sample-high">Load High-Score Sample</button>
+              <button type="button" class="btn btn-secondary btn-sm" id="btn-sample-low">Load Low-Score Sample</button>
+              <button type="button" class="btn btn-secondary btn-sm" id="btn-audit-clear">Clear</button>
+            </div>
+          </div>
+
+          <div class="output-box" aria-live="polite">
+            <div class="score-header">
+              <div>
+                <div class="score-num" id="audit-score">0<small>/100</small></div>
+                <div class="card-meta" id="audit-meta">Waiting for input...</div>
+              </div>
+              <span class="grade-badge grade-good" id="audit-grade">Evaluating</span>
+            </div>
+
+            <div class="dim-list" id="audit-dimensions"></div>
+
+            <h3 style="margin: 0 0 8px; font-size: 0.95rem;">Priority Fixes</h3>
+            <ul class="fix-list" id="audit-fixes"></ul>
+
+            <div class="btn-row">
+              <button type="button" class="btn btn-secondary btn-sm" id="btn-copy-audit">Copy Markdown Report</button>
+              <button type="button" class="btn btn-secondary btn-sm" id="btn-download-audit">Download .md</button>
+              <span class="status-toast" id="audit-status" role="status"></span>
+            </div>
+
+            <div class="context-cta" id="audit-context-cta"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tool 2: llms.txt Generator & Validator -->
+      <div class="tool-panel" role="tabpanel" aria-labelledby="tab-llmstxt" data-tab-panel="llmstxt" id="llmstxt">
+        <div class="panel-grid">
+          <div>
+            <div class="field">
+              <label for="llms-site-name">Site / Brand Name (H1)</label>
+              <input id="llms-site-name" type="text" placeholder="Acme Cloud">
+            </div>
+            <div class="field">
+              <label for="llms-base-url">Base Domain URL</label>
+              <input id="llms-base-url" type="url" placeholder="https://acmecloud.example">
+            </div>
+            <div class="field">
+              <label for="llms-tagline">One-Sentence Summary (Blockquote)</label>
+              <input id="llms-tagline" type="text" placeholder="Concise summary of what your product does and who it serves.">
+            </div>
+            <div class="field">
+              <label for="llms-details">Key Context / Positioning Paragraph (optional)</label>
+              <textarea id="llms-details" rows="3" placeholder="Highlight pricing model, target audience, compliance certifications, or core differentiators."></textarea>
+            </div>
+            <div class="field">
+              <label for="llms-sections">Sections &amp; Links (<code>Section Name</code> then <code>- Title | /path-or-url | Description</code>)</label>
+              <textarea id="llms-sections" class="code-input" rows="8" placeholder="Core Documentation&#10;- Pricing | /pricing | Transparent plan limits and tiers"></textarea>
+              <span class="field-hint">Relative paths starting with <code>/</code> automatically resolve against your Base Domain URL.</span>
+            </div>
+            <div class="btn-row">
+              <button type="button" class="btn btn-secondary btn-sm" id="btn-sample-llms">Reset to Sample</button>
+              <a class="btn btn-secondary btn-sm" href="./llms-txt-guide.html">Read 2026 llms.txt Spec Guide &rarr;</a>
+            </div>
+          </div>
+
+          <div class="output-box" aria-live="polite">
+            <h3 style="margin: 0 0 10px; font-size: 0.95rem;">Live Spec Validation</h3>
+            <div class="check-list" id="llms-checks"></div>
+            <pre class="code-output" id="llms-output"></pre>
+            <div class="btn-row">
+              <button type="button" class="btn btn-primary btn-sm" id="btn-copy-llms">Copy llms.txt</button>
+              <button type="button" class="btn btn-secondary btn-sm" id="btn-download-llms">Download llms.txt</button>
+              <span class="status-toast" id="llms-status" role="status"></span>
+            </div>
+            <div class="context-cta">
+              <div class="context-cta-label">Monitor Whether AI Assistants Cite Your Key Pages</div>
+              <p>Publishing <code>/llms.txt</code> improves discoverability, but you still need daily prompt tracking to verify citations in ChatGPT and Perplexity.</p>
+              <a class="btn btn-primary btn-sm" href="#" data-affiliate="seranking" data-placement="llmstxt_cta">Try SE Ranking AI Visibility &rarr;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tool 3: AI Crawler robots.txt Policy Builder -->
+      <div class="tool-panel" role="tabpanel" aria-labelledby="tab-robots" data-tab-panel="robots" id="robots">
+        <div class="panel-grid">
+          <div>
+            <div class="field">
+              <label>1. Choose a Starting Policy Preset</label>
+              <div class="preset-group">
+                <button type="button" class="preset-btn is-active" data-robots-preset="search_only">
+                  <strong>Allow Search Only</strong>
+                  <span>Keep AI citations, block model training</span>
+                </button>
+                <button type="button" class="preset-btn" data-robots-preset="open_all">
+                  <strong>Allow All AI Bots</strong>
+                  <span>Maximum brand discovery footprint</span>
+                </button>
+                <button type="button" class="preset-btn" data-robots-preset="strict_block">
+                  <strong>Block All AI Bots</strong>
+                  <span>Strict opt-out for gated portals</span>
+                </button>
+              </div>
+            </div>
+
+            <div class="field">
+              <label>2. Fine-Tune Individual AI Crawlers (9 Major Bots)</label>
+              <div class="bot-grid" id="robots-bot-list"></div>
+            </div>
+
+            <div class="field">
+              <label for="robots-sitemap">XML Sitemap URL</label>
+              <input id="robots-sitemap" type="url" value="https://example.com/sitemap.xml">
+            </div>
+            <div class="field">
+              <label for="robots-llms">llms.txt Manifest URL (comment reference)</label>
+              <input id="robots-llms" type="url" value="https://example.com/llms.txt">
+            </div>
+            <div class="field">
+              <label for="robots-disallow">Global Disallow Paths (one per line)</label>
+              <textarea id="robots-disallow" class="code-input" rows="3">/admin/
+/api/private/</textarea>
+            </div>
+          </div>
+
+          <div class="output-box" aria-live="polite">
+            <h3 style="margin: 0 0 10px; font-size: 0.95rem;">Generated <code>robots.txt</code></h3>
+            <div class="check-list" id="robots-summary"></div>
+            <pre class="code-output" id="robots-output"></pre>
+            <div class="btn-row">
+              <button type="button" class="btn btn-primary btn-sm" id="btn-copy-robots">Copy robots.txt</button>
+              <button type="button" class="btn btn-secondary btn-sm" id="btn-download-robots">Download robots.txt</button>
+              <a class="btn btn-secondary btn-sm" href="./robots-txt-ai-crawlers.html">Full Bot Directory &rarr;</a>
+              <span class="status-toast" id="robots-status" role="status"></span>
+            </div>
+            <div class="context-cta">
+              <div class="context-cta-label">Track Real Citation Share After Updating robots.txt</div>
+              <p>Benchmark how often ChatGPT, Perplexity, and Google AI Overviews cite your domain versus top competitors.</p>
+              <a class="btn btn-primary btn-sm" href="#" data-affiliate="semrush" data-placement="robots_cta">Start Semrush AI Visibility Trial &rarr;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Recommended Paid Monitoring Suites -->
+    <section class="section" id="recommended-tools">
+      <div class="section-head">
+        <h2>Ready to Track Live AI Citations Daily?</h2>
+        <p>CitePulse GEO handles on-page readiness and technical files for free. When you need automated daily prompt tracking across ChatGPT, Perplexity, Claude, and Google AI Overviews, compare our top vetted platforms (<a href="./best-geo-tools-2026.html">read full 2026 comparison &rarr;</a>).</p>
+      </div>
+      <div class="card-grid">
+        <article class="card">
+          <span class="card-badge featured">Best All-in-One GEO Value</span>
+          <h3>SE Ranking (SE Visible)</h3>
+          <p>Combines AI Overviews, ChatGPT, and Perplexity citation tracking with full rank tracking, technical audits, and competitor gap analysis.</p>
+          <div class="card-meta">Starting from $65/mo &bull; Ideal for SMBs &amp; agencies</div>
+          <div class="card-footer">
+            <a class="btn btn-primary btn-sm" href="#" data-affiliate="seranking" data-placement="home_card">Try SE Ranking Free &rarr;</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <span class="card-badge">Best AI Content + GEO Suite</span>
+          <h3>Writesonic GEO</h3>
+          <p>Audits missing entity coverage and accelerates publishing citation-ready comparison pages, glossaries, and FAQ blocks.</p>
+          <div class="card-meta">Starting from $79/mo &bull; Ideal for SaaS growth teams</div>
+          <div class="card-footer">
+            <a class="btn btn-secondary btn-sm" href="#" data-affiliate="writesonic" data-placement="home_card">Explore Writesonic GEO &rarr;</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <span class="card-badge">Best Enterprise Share-of-Voice</span>
+          <h3>Semrush AI Visibility</h3>
+          <p>Benchmarks brand sentiment, citation share, and AI Mode visibility alongside the industry's largest competitive keyword database.</p>
+          <div class="card-meta">Starting from $139.95/mo &bull; Ideal for mid-market &amp; enterprise</div>
+          <div class="card-footer">
+            <a class="btn btn-secondary btn-sm" href="#" data-affiliate="semrush" data-placement="home_card">Start Semrush Trial &rarr;</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Editorial Guides -->
+    <section class="section">
+      <div class="section-head">
+        <h2>2026 Technical GEO Playbooks</h2>
+        <p>Actionable, zero-fluff reference guides written for SEO engineers, content leads, and indie SaaS founders.</p>
+      </div>
+      <div class="card-grid">
+        <article class="card">
+          <span class="card-badge">Comparison Guide</span>
+          <h3><a href="./best-geo-tools-2026.html">Best GEO &amp; AI Visibility Tools in 2026</a></h3>
+          <p>Side-by-side breakdown of SE Ranking, Writesonic GEO, Semrush AI Visibility, Surfer AI Tracker, Otterly.AI, and Mangools by budget and team stage.</p>
+          <div class="card-footer">
+            <a href="./best-geo-tools-2026.html">Compare all 6 tools &rarr;</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <span class="card-badge">Specification Guide</span>
+          <h3><a href="./llms-txt-guide.html">Complete <code>llms.txt</code> Setup Guide (2026)</a></h3>
+          <p>Exact Markdown syntax, common validation mistakes, and copy-paste deployment steps for GitHub Pages, Cloudflare Pages, Vercel, and WordPress.</p>
+          <div class="card-footer">
+            <a href="./llms-txt-guide.html">Read llms.txt guide &rarr;</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <span class="card-badge">Crawler Reference</span>
+          <h3><a href="./robots-txt-ai-crawlers.html">AI Crawlers <code>robots.txt</code> Matrix (2026)</a></h3>
+          <p>How to separate live AI citation bots (OAI-SearchBot, PerplexityBot, Claude-SearchBot) from model-training scrapers without hurting search traffic.</p>
+          <div class="card-footer">
+            <a href="./robots-txt-ai-crawlers.html">View crawler matrix &rarr;</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" id="faq">
+      <div class="section-head">
+        <h2>Frequently Asked Questions</h2>
+      </div>
+      <div class="faq-list">
+        <details class="faq-item" open>
+          <summary>What is Generative Engine Optimization (GEO)?</summary>
+          <p>Generative Engine Optimization (GEO) is the practice of structuring web pages, entity definitions, verifiable facts, and machine-readable manifests like JSON-LD and <code>llms.txt</code> so AI search engines such as ChatGPT Search, Perplexity, Claude, and Google AI Overviews accurately retrieve and cite your brand.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Does CitePulse GEO send my HTML or proprietary copy to an external server?</summary>
+          <p>No. Every audit score, <code>llms.txt</code> manifest, and <code>robots.txt</code> policy is computed deterministically inside your local browser using client-side JavaScript. Nothing is uploaded or stored on any backend server.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Should I block GPTBot while allowing OAI-SearchBot in robots.txt?</summary>
+          <p>For most SaaS companies and publishers, yes. Allowing <code>OAI-SearchBot</code>, <code>ChatGPT-User</code>, <code>Claude-SearchBot</code>, and <code>PerplexityBot</code> preserves live AI search citations and referral traffic, while disallowing <code>GPTBot</code>, <code>ClaudeBot</code>, <code>Google-Extended</code>, and <code>CCBot</code> opts your content out of foundation model training.</p>
+        </details>
+        <details class="faq-item">
+          <summary>How is CitePulse GEO free to use?</summary>
+          <p>CitePulse GEO runs as a zero-infrastructure static web app and is supported through transparent affiliate partnerships with paid AI visibility monitoring suites. Clicking our partner recommendations never increases your price.</p>
+        </details>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <strong>CitePulse GEO</strong> &mdash; Free AI Search Visibility &amp; GEO Audit Toolkit.<br>
+        <span>Client-side only &bull; No cookies required &bull; Transparent affiliate disclosure.</span>
+      </div>
+      <div class="footer-links">
+        <a href="./#auditor">GEO Auditor</a>
+        <a href="./#llmstxt">llms.txt Generator</a>
+        <a href="./#robots">robots.txt Builder</a>
+        <a href="./best-geo-tools-2026.html">Best GEO Tools</a>
+        <a href="./llms-txt-guide.html">llms.txt Guide</a>
+        <a href="./robots-txt-ai-crawlers.html">AI Crawlers Guide</a>
+        <a href="./llms.txt">llms.txt</a>
+        <a href="./sitemap.xml">Sitemap</a>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="./assets/app.js"></script>
+</body>
+</html>
