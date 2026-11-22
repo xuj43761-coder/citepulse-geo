@@ -223,4 +223,29 @@ test('Root llms.txt, robots.txt, sitemap.xml, and index.html include all 5 new n
   assert.ok(robots.includes('Sitemap: https://xuj43761-coder.github.io/citepulse-geo/sitemap.xml'));
 });
 
+test('High-score audit exposes #keyword-research entry and score guide has adjacent Mangools disclosures', () => {
+  const high = runGeoAudit(AUDIT_SAMPLES.high.input, AUDIT_SAMPLES.high.url);
+  const low = runGeoAudit(AUDIT_SAMPLES.low.input, AUDIT_SAMPLES.low.url);
+  const empty = runGeoAudit('', '');
+
+  const meetsKeywordGate = (res) =>
+    res.totalScore >= 80 &&
+    res.dimensions.length === 5 &&
+    res.dimensions.every((d) => d.score >= 12);
+
+  assert.equal(high.totalScore, 97);
+  assert.equal(meetsKeywordGate(high), true);
+  assert.equal(meetsKeywordGate(low), false);
+  assert.equal(meetsKeywordGate(empty), false);
+
+  const appJs = fs.readFileSync(path.join(ROOT, 'assets/app.js'), 'utf8');
+  assert.ok(appJs.includes('./what-is-a-good-geo-score.html#keyword-research'));
+
+  const scoreGuide = fs.readFileSync(path.join(ROOT, 'what-is-a-good-geo-score.html'), 'utf8');
+  assert.ok(scoreGuide.includes('<h2 id="keyword-research">What to Do Right After Your GEO Score Passes 80+</h2>'));
+  const disclosure = 'Affiliate disclosure: We may earn a commission if you buy through our Mangools link, at no extra cost to you.';
+  const matches = scoreGuide.split(disclosure).length - 1;
+  assert.equal(matches, 2, `Expected 2 adjacent Mangools disclosures, found ${matches}`);
+});
+
 console.log(`\nALL ${passed} TESTS PASSED.`);

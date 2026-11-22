@@ -121,6 +121,7 @@ function initAuditor() {
   const metaEl = document.getElementById('audit-meta');
   const dimsEl = document.getElementById('audit-dimensions');
   const fixesEl = document.getElementById('audit-fixes');
+  const keywordGuideEl = document.getElementById('audit-keyword-guide');
   const ctaWrap = document.getElementById('audit-context-cta');
 
   if (!contentInput || !scoreEl) return;
@@ -152,6 +153,20 @@ function initAuditor() {
     fixesEl.innerHTML = result.topFixes.length
       ? result.topFixes.map((f) => `<li>${escapeHtml(f)}</li>`).join('')
       : '<li>Strong technical & citation fundamentals. Monitor live AI citations weekly across ChatGPT, Perplexity, and Google AI Overviews.</li>';
+
+    if (keywordGuideEl) {
+      const readyForKeywordResearch =
+        result.totalScore >= 80 &&
+        result.dimensions.length === 5 &&
+        result.dimensions.every((d) => d.score >= 12);
+      if (readyForKeywordResearch) {
+        keywordGuideEl.hidden = false;
+        keywordGuideEl.innerHTML = '<p>Planning your next article? <a href="./what-is-a-good-geo-score.html#keyword-research">Check keyword difficulty and see which pages already rank for your question &rarr;</a></p>';
+      } else {
+        keywordGuideEl.hidden = true;
+        keywordGuideEl.innerHTML = '';
+      }
+    }
 
     const rec = pickContextualRecommendation(result);
     const href = buildAffiliateHref(rec.program.id, rec.placement);

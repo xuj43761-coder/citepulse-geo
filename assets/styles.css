@@ -512,6 +512,24 @@ select:focus {
   margin-bottom: 6px;
 }
 
+.guide-next-step {
+  margin-top: 14px;
+  padding: 12px 14px;
+  background: var(--surface-alt, #f8fafc);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+}
+
+.guide-next-step p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--ink-secondary);
+}
+
+.guide-next-step a {
+  font-weight: 600;
+}
+
 .context-cta {
   margin-top: 16px;
   padding: 14px;
