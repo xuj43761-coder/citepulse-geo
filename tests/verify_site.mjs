@@ -246,6 +246,11 @@ test('High-score audit exposes #keyword-research entry and score guide has adjac
   const disclosure = 'Affiliate disclosure: We may earn a commission if you buy through our Mangools link, at no extra cost to you.';
   const matches = scoreGuide.split(disclosure).length - 1;
   assert.equal(matches, 2, `Expected 2 adjacent Mangools disclosures, found ${matches}`);
+
+  const stylesCss = fs.readFileSync(path.join(ROOT, 'assets/styles.css'), 'utf8');
+  assert.ok(stylesCss.includes('scroll-margin-top: 96px;'), 'Missing desktop anchor scroll-margin-top');
+  assert.ok(stylesCss.includes('position: static;'), 'Missing mobile non-sticky header rule');
+  assert.ok(stylesCss.includes('display: inline-block;'), 'Missing solid hit-target display rule for guide link');
 });
 
 console.log(`\nALL ${passed} TESTS PASSED.`);

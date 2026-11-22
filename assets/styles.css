@@ -65,6 +65,17 @@ img {
   padding: 0 20px;
 }
 
+/* Anchor offset under sticky header */
+html {
+  scroll-padding-top: 96px;
+}
+
+main [id],
+h2[id],
+h3[id] {
+  scroll-margin-top: 96px;
+}
+
 /* Header */
 .site-header {
   position: sticky;
@@ -527,7 +538,10 @@ select:focus {
 }
 
 .guide-next-step a {
+  display: inline-block;
+  margin-top: 4px;
   font-weight: 600;
+  line-height: 1.45;
 }
 
 .context-cta {
@@ -905,6 +919,14 @@ details.faq-item p {
 }
 
 @media (max-width: 900px) {
+  html {
+    scroll-padding-top: 132px;
+  }
+  main [id],
+  h2[id],
+  h3[id] {
+    scroll-margin-top: 132px;
+  }
   .panel-grid {
     grid-template-columns: 1fr;
   }
@@ -917,6 +939,17 @@ details.faq-item p {
 }
 
 @media (max-width: 640px) {
+  html {
+    scroll-padding-top: 24px;
+  }
+  main [id],
+  h2[id],
+  h3[id] {
+    scroll-margin-top: 24px;
+  }
+  .site-header {
+    position: static;
+  }
   .header-inner {
     flex-direction: column;
     align-items: flex-start;
