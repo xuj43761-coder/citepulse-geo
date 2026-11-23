@@ -959,3 +959,14 @@ details.faq-item p {
     padding: 16px;
   }
 }
+
+.affiliate-note {
+  font-size: 0.8rem;
+  line-height: 1.45;
+  color: var(--ink-muted);
+  margin: 0 0 8px;
+}
+
+td .affiliate-note {
+  min-width: 190px;
+}

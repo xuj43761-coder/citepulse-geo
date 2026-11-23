@@ -124,7 +124,7 @@ test('All data-affiliate attributes reference registered programs', () => {
       count += 1;
     }
   }
-  assert.ok(count >= 20, `Expected >=20 affiliate placements across site, found ${count}`);
+  assert.ok(count >= 16, `Expected >=16 tracked partner/resource placements across site, found ${count}`);
 });
 
 test('All DOM IDs bound by assets/app.js exist in index.html', () => {
@@ -192,20 +192,54 @@ test('Tool 3: generateRobotsTxt works across all 3 presets and custom bot overri
   assert.ok(custom.output.includes('User-agent: PerplexityBot\nAllow: /'));
 });
 
-test('Affiliate URL builder preserves live Mangools hash & appends UTM params', () => {
-  for (const id of Object.keys(AFFILIATE_PROGRAMS)) {
+test('Affiliate URL builder distinguishes live affiliates from plain resources & preserves Mangools hash', () => {
+  for (const [id, prog] of Object.entries(AFFILIATE_PROGRAMS)) {
     const href = buildAffiliateHref(id, 'unit_test');
     assert.ok(href.includes('utm_source=citepulse_geo'));
-    assert.ok(href.includes('utm_medium=affiliate'));
+    assert.ok(href.includes(`utm_medium=${prog.isAffiliate ? 'affiliate' : 'referral'}`));
     assert.ok(href.includes('utm_campaign=unit_test'));
   }
+  assert.equal(AFFILIATE_PROGRAMS.mangools.isAffiliate, true);
+  assert.equal(AFFILIATE_PROGRAMS.seranking.isAffiliate, false);
   const mangoolsHref = buildAffiliateHref('mangools', 'unit_test');
   assert.ok(mangoolsHref.endsWith('#a6b01bec06aee08900128e011'), `Mangools hash missing: ${mangoolsHref}`);
 
   const high = runGeoAudit(AUDIT_SAMPLES.high.input, AUDIT_SAMPLES.high.url);
   const low = runGeoAudit(AUDIT_SAMPLES.low.input, AUDIT_SAMPLES.low.url);
   assert.equal(pickContextualRecommendation(high).program.id, 'seranking');
+  assert.equal(pickContextualRecommendation(high).placement, 'audit_monitor');
   assert.ok(['surfer', 'writesonic'].includes(pickContextualRecommendation(low).program.id));
+
+  const hygieneLow = {
+    totalScore: 83,
+    dimensions: [
+      { key: 'hygiene', score: 8 },
+      { key: 'schema', score: 18 },
+      { key: 'entity', score: 19 },
+      { key: 'citability', score: 19 },
+      { key: 'structure', score: 19 },
+    ],
+  };
+  assert.equal(pickContextualRecommendation(hygieneLow).placement, 'audit_hygiene_first');
+  assert.ok(pickContextualRecommendation(hygieneLow).reason.includes('Start with the crawler and metadata fixes above'));
+});
+
+test('All 5 live Mangools placements have adjacent commission disclosures across comparison & narrow guides', () => {
+  const bestTools = fs.readFileSync(path.join(ROOT, 'best-geo-tools-2026.html'), 'utf8');
+  const note = 'We may earn a commission if you buy through this Mangools link, at no extra cost to you.';
+  assert.equal(bestTools.split(note).length - 1, 2, 'best-geo-tools-2026.html must have 2 adjacent Mangools disclosures');
+  assert.ok(bestTools.includes('data-affiliate="mangools" data-placement="compare_table"'));
+  assert.ok(bestTools.includes('data-affiliate="mangools" data-placement="compare_mangools"'));
+
+  const llmsVsRobots = fs.readFileSync(path.join(ROOT, 'llms-txt-vs-robots-txt.html'), 'utf8');
+  assert.equal(llmsVsRobots.split(note).length - 1, 1, 'llms-txt-vs-robots-txt.html must have 1 adjacent Mangools disclosure');
+  assert.ok(llmsVsRobots.includes('data-affiliate="mangools" data-placement="llmstxt_vs_robots_keyword_research"'));
+
+  const chatgptGuide = fs.readFileSync(path.join(ROOT, 'chatgpt-not-citing-my-page.html'), 'utf8');
+  assert.ok(chatgptGuide.includes('./what-is-a-good-geo-score.html#keyword-research'));
+
+  const faqGuide = fs.readFileSync(path.join(ROOT, 'faqpage-schema-ai-citations.html'), 'utf8');
+  assert.ok(!faqGuide.includes('data-affiliate="seranking"'), 'faqpage guide should not carry mismatched SE Ranking plugs');
 });
 
 test('Root llms.txt, robots.txt, sitemap.xml, and index.html include all 5 new narrow pages', () => {

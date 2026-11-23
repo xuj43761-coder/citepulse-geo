@@ -161,7 +161,7 @@ function initAuditor() {
         result.dimensions.every((d) => d.score >= 12);
       if (readyForKeywordResearch) {
         keywordGuideEl.hidden = false;
-        keywordGuideEl.innerHTML = '<p>Planning your next article? <a href="./what-is-a-good-geo-score.html#keyword-research">Check keyword difficulty and see which pages already rank for your question &rarr;</a></p>';
+        keywordGuideEl.innerHTML = '<p>Planning a new article? <a href="./what-is-a-good-geo-score.html#keyword-research">Check keyword difficulty and see who already ranks &rarr;</a></p>';
       } else {
         keywordGuideEl.hidden = true;
         keywordGuideEl.innerHTML = '';
@@ -170,10 +170,15 @@ function initAuditor() {
 
     const rec = pickContextualRecommendation(result);
     const href = buildAffiliateHref(rec.program.id, rec.placement);
+    const relAttr = rec.program.isAffiliate ? 'sponsored noopener noreferrer' : 'noopener noreferrer';
+    const disclosureHtml = rec.program.isAffiliate && rec.program.disclosureText
+      ? `<p class="affiliate-note">${escapeHtml(rec.program.disclosureText)}</p>`
+      : '';
     ctaWrap.innerHTML = `
-      <div class="context-cta-label">Recommended Next Step • Affiliate Partner</div>
+      <div class="context-cta-label">Optional tool for this next step</div>
       <p><strong>${escapeHtml(rec.program.name)}</strong> (${escapeHtml(rec.program.startingPrice)}): ${escapeHtml(rec.reason)}</p>
-      <a class="btn btn-primary btn-sm" href="${escapeHtml(href)}" target="_blank" rel="sponsored noopener noreferrer" data-affiliate="${escapeHtml(rec.program.id)}" data-placement="${escapeHtml(rec.placement)}">${escapeHtml(rec.program.ctaLabel)} &rarr;</a>
+      ${disclosureHtml}
+      <a class="btn btn-primary btn-sm" href="${escapeHtml(href)}" target="_blank" rel="${relAttr}" data-affiliate="${escapeHtml(rec.program.id)}" data-placement="${escapeHtml(rec.placement)}">${escapeHtml(rec.program.ctaLabel)} &rarr;</a>
     `;
     const link = ctaWrap.querySelector('a[data-affiliate]');
     if (link) {

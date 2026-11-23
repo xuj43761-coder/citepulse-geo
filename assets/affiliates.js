@@ -1,8 +1,8 @@
 /**
- * CitePulse GEO — Central Affiliate Program Registry
+ * CitePulse GEO — Central Partner & Resource Registry
  *
- * Swap any `affiliateUrl` below with your live partner tracking link once approved.
- * Every CTA button across all pages hydrates from this single file.
+ * `isAffiliate` explicitly marks programs with a live, verified affiliate tracking ID.
+ * Non-affiliate entries render as ordinary external resources (no `rel="sponsored"`).
  */
 export const AFFILIATE_PROGRAMS = {
   seranking: {
@@ -15,6 +15,7 @@ export const AFFILIATE_PROGRAMS = {
     bestFor: 'Agencies & SMBs tracking AI Overviews, ChatGPT & Perplexity citations alongside rank tracking',
     ctaLabel: 'Try SE Ranking Free',
     affiliateUrl: 'https://seranking.com/ai-visibility-tracker.html',
+    isAffiliate: false,
   },
   writesonic: {
     id: 'writesonic',
@@ -26,6 +27,7 @@ export const AFFILIATE_PROGRAMS = {
     bestFor: 'Growth teams fixing missing entity answers and publishing citation-ready landing pages fast',
     ctaLabel: 'Explore Writesonic GEO',
     affiliateUrl: 'https://writesonic.com/geo',
+    isAffiliate: false,
   },
   semrush: {
     id: 'semrush',
@@ -37,6 +39,7 @@ export const AFFILIATE_PROGRAMS = {
     bestFor: 'Mid-market & enterprise teams benchmarking share-of-voice across ChatGPT, Perplexity & Google AI Mode',
     ctaLabel: 'Start Semrush Trial',
     affiliateUrl: 'https://www.semrush.com/ai-seo/overview/',
+    isAffiliate: false,
   },
   surfer: {
     id: 'surfer',
@@ -48,6 +51,7 @@ export const AFFILIATE_PROGRAMS = {
     bestFor: 'Content editors lifting fact density, NLP coverage, and answer structure before publishing',
     ctaLabel: 'Try Surfer AI Tracker',
     affiliateUrl: 'https://surferseo.com/ai-tracker/',
+    isAffiliate: false,
   },
   otterly: {
     id: 'otterly',
@@ -59,6 +63,7 @@ export const AFFILIATE_PROGRAMS = {
     bestFor: 'Solo founders & lean SaaS teams monitoring brand mentions and link citations on specific buyer prompts',
     ctaLabel: 'Check Otterly.AI',
     affiliateUrl: 'https://otterly.ai/',
+    isAffiliate: false,
   },
   mangools: {
     id: 'mangools',
@@ -68,17 +73,23 @@ export const AFFILIATE_PROGRAMS = {
     startingPrice: 'From $29.90/mo',
     commissionSummary: '25%–35% lifetime recurring • instant approval',
     bestFor: 'Indie makers discovering low-competition question queries that trigger AI citations quickly',
-    ctaLabel: 'Try Mangools Free',
+    ctaLabel: 'Explore keyword research with Mangools',
     affiliateUrl: 'https://mangools.com/#a6b01bec06aee08900128e011',
+    isAffiliate: true,
+    disclosureText: 'We may earn a commission if you buy through this Mangools link, at no extra cost to you.',
   },
 };
+
+export function isAffiliateProgram(programId) {
+  return Boolean(AFFILIATE_PROGRAMS[programId]?.isAffiliate);
+}
 
 export function buildAffiliateHref(programId, placement = 'card') {
   const prog = AFFILIATE_PROGRAMS[programId];
   if (!prog) return '#';
   const url = new URL(prog.affiliateUrl);
   url.searchParams.set('utm_source', 'citepulse_geo');
-  url.searchParams.set('utm_medium', 'affiliate');
+  url.searchParams.set('utm_medium', prog.isAffiliate ? 'affiliate' : 'referral');
   url.searchParams.set('utm_campaign', placement);
   return url.toString();
 }
@@ -104,6 +115,13 @@ export function pickContextualRecommendation(auditResult) {
       program: AFFILIATE_PROGRAMS.writesonic,
       reason: 'Strengthen entity positioning and deploy citation-ready pages faster with Writesonic GEO workflows.',
       placement: 'audit_entity_gap',
+    };
+  }
+  if (byKey.hygiene < 12) {
+    return {
+      program: AFFILIATE_PROGRAMS.seranking,
+      reason: 'Start with the crawler and metadata fixes above. Once those are resolved, you can track live citations over time.',
+      placement: 'audit_hygiene_first',
     };
   }
   return {
@@ -134,7 +152,7 @@ export function hydrateAffiliateLinks(root = document) {
     const prog = AFFILIATE_PROGRAMS[programId];
     if (!prog) return;
     link.setAttribute('href', buildAffiliateHref(programId, placement));
-    link.setAttribute('rel', 'sponsored noopener noreferrer');
+    link.setAttribute('rel', prog.isAffiliate ? 'sponsored noopener noreferrer' : 'noopener noreferrer');
     link.setAttribute('target', '_blank');
     if (!link.dataset.boundClick) {
       link.dataset.boundClick = '1';
