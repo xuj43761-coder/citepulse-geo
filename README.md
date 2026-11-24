@@ -1,25 +1,32 @@
-# CitePulse GEO
+# CitePulse GEO — Free AI Search Visibility & GEO Audit Toolkit
 
-Free, 100% browser-based Generative Engine Optimization (GEO) & AI Search Visibility Toolkit.
+**Live Toolkit:** https://xuj43761-coder.github.io/citepulse-geo/
 
-- **Live Site**: https://xuj43761-coder.github.io/citepulse-geo/
-- **Hosting Cost**: `$0/month` on GitHub Pages (pure static HTML/CSS/ES modules, zero backend, zero cold start)
-- **Monetization**: Transparent affiliate recommendations centralized in `assets/affiliates.js`
+CitePulse GEO is a free, 100% client-side **Generative Engine Optimization (GEO)** toolkit that helps technical marketers, indie founders, and SEO teams audit pages for AI search citation readiness (ChatGPT Search, Perplexity, Claude, and Google AI Overviews) — with zero login, zero server upload, and instant local scoring.
 
-## Included Interactive Tools
-1. **100-Point GEO Citation Readiness Auditor (`#auditor`)** — Scores HTML or Markdown across 5 dimensions (Crawler Hygiene, JSON-LD Schema, Entity Clarity, Citability & Fact Density, FAQ & Scannable Structure) with copy/download Markdown report export.
-2. **`llms.txt` Generator & Spec Validator (`#llmstxt`)** — Builds and validates spec-compliant `/llms.txt` files in real time.
-3. **AI Crawler `robots.txt` Policy Builder (`#robots`)** — 3 presets + per-bot rules for 9 major AI search and model-training crawlers.
+## Interactive Tools (Free, Runs in Browser)
 
-## Included Editorial Guides
-- `best-geo-tools-2026.html` — Commercial comparison of 6 GEO & AI visibility suites
-- `llms-txt-guide.html` — 2026 specification and deployment guide
-- `robots-txt-ai-crawlers.html` — AI search vs. training crawler matrix
+- **[100-Point GEO Citation Readiness Auditor](https://xuj43761-coder.github.io/citepulse-geo/#auditor)** — Paste HTML or Markdown to score 5 citation dimensions (Crawler Hygiene, JSON-LD Schema, Entity Clarity, Citability & Fact Density, and FAQ Structure) and export a prioritized Markdown fix checklist.
+- **[`llms.txt` Generator & Spec Validator](https://xuj43761-coder.github.io/citepulse-geo/#llmstxt)** — Build and validate a spec-compliant `/llms.txt` file with live spec checks.
+- **[AI Crawler `robots.txt` Policy Builder](https://xuj43761-coder.github.io/citepulse-geo/#robots)** — Generate ready-to-deploy `robots.txt` rules separating AI search indexing bots (`OAI-SearchBot`, `PerplexityBot`, `Claude-SearchBot`) from model-training bots (`GPTBot`, `CCBot`, `ClaudeBot`).
 
-## Swapping Live Affiliate Links (1-Minute Update)
-Edit `assets/affiliates.js` and replace any `affiliateUrl` with your approved partner link. Every page CTA and contextual audit recommendation updates automatically with `rel="sponsored noopener noreferrer"`, `target="_blank"`, and UTM parameters.
+## Technical Guides & Playbooks
 
-## Verification
+- [Best GEO & AI Visibility Tools (2026 Comparison)](https://xuj43761-coder.github.io/citepulse-geo/best-geo-tools-2026.html)
+- [`llms.txt` Specification & Deployment Guide](https://xuj43761-coder.github.io/citepulse-geo/llms-txt-guide.html)
+- [`llms.txt` vs `robots.txt`: Which One Controls AI Crawlers?](https://xuj43761-coder.github.io/citepulse-geo/llms-txt-vs-robots-txt.html)
+- [AI Crawlers `robots.txt` Policy Matrix](https://xuj43761-coder.github.io/citepulse-geo/robots-txt-ai-crawlers.html)
+- [Should I Block `GPTBot`? Search Visibility vs. Training Trade-offs](https://xuj43761-coder.github.io/citepulse-geo/should-i-block-gptbot.html)
+- [Why Isn't ChatGPT Citing My Page? Diagnostic Checklist](https://xuj43761-coder.github.io/citepulse-geo/chatgpt-not-citing-my-page.html)
+- [FAQPage Schema & AI Citations: Implementation Guide](https://xuj43761-coder.github.io/citepulse-geo/faqpage-schema-ai-citations.html)
+- [What Is a Good GEO Score? Interpreting Your 100-Point Audit](https://xuj43761-coder.github.io/citepulse-geo/what-is-a-good-geo-score.html)
+
+## Local Verification
+
 ```bash
 node tests/verify_site.mjs
 ```
+
+## Disclosure
+
+CitePulse GEO tools are free to use. Some guides contain clearly labeled affiliate links (such as keyword research companions) where we may earn a commission at no extra cost to you.
