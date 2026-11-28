@@ -1,5 +1,6 @@
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
+import { createServer } from 'node:http';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -20,6 +21,8 @@ import {
   pickContextualRecommendation,
 } from '../assets/affiliates.js';
 
+import { buildLlmsFile, buildRobotsSnippet, CRAWLERS } from '../assets/crawler-generator.js';
+
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '..');
 
@@ -31,12 +34,16 @@ const NARROW_PAGES = [
   'chatgpt-not-citing-my-page.html',
 ];
 
+const GENERATOR_PAGE = 'ai-crawler-robots-llms-generator.html';
+const GENERATOR_JS = 'assets/crawler-generator.js';
+
 const HTML_FILES = [
   'index.html',
   'best-geo-tools-2026.html',
   'llms-txt-guide.html',
   'robots-txt-ai-crawlers.html',
   ...NARROW_PAGES,
+  GENERATOR_PAGE,
   '404.html',
 ];
 
@@ -50,6 +57,7 @@ const REQUIRED_FILES = [
   'assets/engine.js',
   'assets/affiliates.js',
   'assets/app.js',
+  GENERATOR_JS,
   'assets/favicon.svg',
   'assets/logo.svg',
   'assets/og-card.png',
@@ -286,5 +294,102 @@ test('High-score audit exposes #keyword-research entry and score guide has adjac
   assert.ok(stylesCss.includes('position: static;'), 'Missing mobile non-sticky header rule');
   assert.ok(stylesCss.includes('display: inline-block;'), 'Missing solid hit-target display rule for guide link');
 });
+
+test('Combined generator renders six editable crawler rules without adding a wildcard', () => {
+  const defaults = ROBOTS_PRESETS.search_only.rules;
+  const snippet = buildRobotsSnippet(defaults);
+  assert.equal(snippet.trimEnd().split('\n\n').length, 6);
+  assert.ok(snippet.includes('User-agent: GPTBot\nDisallow: /'));
+  assert.ok(snippet.includes('User-agent: OAI-SearchBot\nAllow: /'));
+  assert.ok(!snippet.includes('User-agent: *'));
+  for (const crawler of CRAWLERS) {
+    const opposite = defaults[crawler] === 'allow' ? 'disallow' : 'allow';
+    const changed = buildRobotsSnippet({ ...defaults, [crawler]: opposite });
+    assert.ok(changed.includes(`User-agent: ${crawler}\n${opposite === 'allow' ? 'Allow' : 'Disallow'}: /`));
+  }
+});
+
+test('Combined generator normalizes URLs and rejects invalid llms.txt inputs', () => {
+  const sample = {
+    domain: 'example.com',
+    siteName: 'Acme Docs',
+    summary: 'Product documentation.',
+    pages: '/docs\nhttps://example.com/docs\nhttps://docs.example.com/help(v2)\n',
+  };
+  const output = buildLlmsFile(sample);
+  assert.ok(output.startsWith('# Acme Docs\n\n> Product documentation.\n\n## Core Pages\n'));
+  assert.ok(output.includes('- [/docs](https://example.com/docs)'));
+  assert.ok(output.includes('https://docs.example.com/help%28v2%29'));
+  assert.equal(validateLlmsTxt(output).valid, true);
+  assert.equal(validateLlmsTxt(output).linkCount, 2);
+  assert.throws(() => buildLlmsFile({ ...sample, domain: 'https://example.com/docs' }), /domain or origin/);
+  assert.throws(() => buildLlmsFile({ ...sample, pages: '/docs\njavascript:alert(1)' }), /line 2/);
+  assert.throws(() => buildLlmsFile({ ...sample, pages: 'https://user:password@example.com/docs' }), /line 1/);
+  assert.throws(() => buildLlmsFile({ ...sample, pages: '' }), /at least one/);
+});
+
+const resources = new Map([
+  [GENERATOR_PAGE, 'text/html; charset=utf-8'],
+  [GENERATOR_JS, 'text/javascript; charset=utf-8'],
+  ['sitemap.xml', 'application/xml; charset=utf-8'],
+  ['llms.txt', 'text/plain; charset=utf-8'],
+]);
+const server = createServer((req, res) => {
+  const file = req.url.slice(1);
+  if (!resources.has(file)) {
+    res.writeHead(404).end();
+    return;
+  }
+  res.writeHead(200, { 'content-type': resources.get(file) });
+  res.end(fs.readFileSync(path.join(ROOT, file)));
+});
+await new Promise((resolve, reject) => {
+  server.once('error', reject);
+  server.listen(0, '127.0.0.1', resolve);
+});
+
+try {
+  const entries = await Promise.all([...resources].map(async ([file, contentType]) => {
+    const response = await fetch(`http://127.0.0.1:${server.address().port}/${file}`);
+    return { file, contentType, response, body: await response.text() };
+  }));
+  test('Combined generator, browser module and discovery files are served over HTTP', () => {
+    for (const { file, contentType, response, body } of entries) {
+      assert.equal(response.status, 200, file);
+      assert.equal(response.headers.get('content-type'), contentType, file);
+      assert.ok(body.length > 0, file);
+    }
+  });
+
+  const [html, js, sitemap, llms] = entries.map(({ body }) => body);
+  test('Combined generator DOM exposes inputs, outputs, exports and an adjacent Mangools disclosure', () => {
+    const ids = [...js.matchAll(/getElementById\('([^']+)'\)/g)].map((match) => match[1]);
+    for (const id of [...ids, 'robots-output', 'llms-output']) {
+      assert.equal(html.split(`id="${id}"`).length - 1, 1, id);
+    }
+    for (const kind of ['robots', 'llms']) {
+      assert.match(html, new RegExp(`<textarea id="${kind}-output"[^>]+readonly`));
+      assert.ok(html.includes(`data-copy="${kind}"`));
+      assert.ok(html.includes(`data-download="${kind}"`));
+    }
+    assert.ok(html.includes(`<script type="module" src="./${GENERATOR_JS}"`));
+    assert.ok(html.includes('href="./#auditor"'));
+    const placement = html.match(/<p class="affiliate-note" id="mangools-disclosure">([^<]+)<\/p>\s*<a [^>]*data-affiliate="mangools" data-placement="crawler_generator" data-utm-content="robots_llms_results" aria-describedby="mangools-disclosure"/);
+    assert.equal(placement?.[1], AFFILIATE_PROGRAMS.mangools.disclosureText);
+  });
+
+  test('Combined generator appears in the canonical sitemap, llms.txt and all three entry pages', () => {
+    const canonical = `https://xuj43761-coder.github.io/citepulse-geo/${GENERATOR_PAGE}`;
+    assert.ok(html.includes(`rel="canonical" href="${canonical}"`));
+    assert.ok(sitemap.includes(`<loc>${canonical}</loc>`));
+    assert.ok(llms.includes(`(${canonical}):`));
+    for (const file of ['index.html', 'should-i-block-gptbot.html', 'llms-txt-vs-robots-txt.html']) {
+      const source = fs.readFileSync(path.join(ROOT, file), 'utf8');
+      assert.ok(source.includes(`href="./${GENERATOR_PAGE}"`), file);
+    }
+  });
+} finally {
+  server.close();
+}
 
 console.log(`\nALL ${passed} TESTS PASSED.`);

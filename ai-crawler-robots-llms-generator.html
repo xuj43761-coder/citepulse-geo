@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI Crawler robots.txt &amp; llms.txt Generator — CitePulse GEO</title>
+  <meta name="description" content="Generate robots.txt rules for GPTBot and five other AI user agents, plus an llms.txt file for your key pages. Copy or download both for free.">
+  <link rel="canonical" href="https://xuj43761-coder.github.io/citepulse-geo/ai-crawler-robots-llms-generator.html">
+  <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg">
+  <link rel="stylesheet" href="./assets/styles.css">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="AI Crawler robots.txt &amp; llms.txt Generator">
+  <meta property="og:description" content="Set AI crawler rules and build an llms.txt file for your key pages in one free browser tool.">
+  <meta property="og:url" content="https://xuj43761-coder.github.io/citepulse-geo/ai-crawler-robots-llms-generator.html">
+  <meta property="og:image" content="https://xuj43761-coder.github.io/citepulse-geo/assets/og-card.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "AI Crawler robots.txt & llms.txt Generator",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Any",
+    "url": "https://xuj43761-coder.github.io/citepulse-geo/ai-crawler-robots-llms-generator.html",
+    "offers": { "@type": "Offer", "price": 0, "priceCurrency": "USD" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "CitePulse GEO", "item": "https://xuj43761-coder.github.io/citepulse-geo/" },
+      { "@type": "ListItem", "position": 2, "name": "AI Crawler robots.txt & llms.txt Generator", "item": "https://xuj43761-coder.github.io/citepulse-geo/ai-crawler-robots-llms-generator.html" }
+    ]
+  }
+  </script>
+  <style>
+    .generator-column { min-width: 0; }
+    .generator-output + .generator-output { margin-top: 20px; }
+    .generator-output textarea { resize: vertical; }
+    .generator-rules { min-width: 0; border: 0; margin: 24px 0 0; padding: 0; }
+    .generator-rules legend { font-weight: 700; margin-bottom: 10px; }
+    .generator-rules select { width: auto; }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand-link" href="./" aria-label="CitePulse GEO Home">
+        <img src="./assets/logo.svg" alt="CitePulse GEO">
+      </a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="./#auditor">GEO Auditor</a>
+        <a href="./should-i-block-gptbot.html">GPTBot Guide</a>
+        <a href="./llms-txt-vs-robots-txt.html">llms.txt vs robots.txt</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h1>AI Crawler <code>robots.txt</code> &amp; <code>llms.txt</code> Generator</h1>
+      <p class="hero-sub">Choose which AI crawlers can access your site and give AI assistants a list of your most useful pages. Both files update as you type and stay in your browser.</p>
+    </section>
+
+    <section class="workspace-card" aria-label="Generate robots.txt and llms.txt">
+      <div class="tool-panel is-active">
+        <div class="panel-grid">
+          <div class="generator-column">
+            <h2>Website details</h2>
+            <div class="field">
+              <label for="site-domain">Website domain</label>
+              <input id="site-domain" type="text" placeholder="example.com" spellcheck="false">
+            </div>
+            <div class="field">
+              <label for="site-name">Site name</label>
+              <input id="site-name" type="text">
+            </div>
+            <div class="field">
+              <label for="site-summary">One-sentence summary</label>
+              <input id="site-summary" type="text">
+            </div>
+            <div class="field">
+              <label for="core-pages">Core page URLs</label>
+              <textarea id="core-pages" class="code-input" rows="4" aria-describedby="core-pages-hint" spellcheck="false"></textarea>
+              <small class="field-hint" id="core-pages-hint">Enter one full URL or root-relative path (such as /docs) per line. Link labels come from the page paths.</small>
+            </div>
+            <button class="btn btn-secondary btn-sm" type="button" id="load-example">Load example</button>
+            <fieldset class="generator-rules">
+              <legend>AI crawler rules</legend>
+              <div class="bot-grid" id="crawler-rules"></div>
+              <small class="field-hint">ChatGPT-User fetches pages at a user's request. OpenAI says robots.txt rules may not apply to these visits.</small>
+            </fieldset>
+          </div>
+
+          <div class="generator-column">
+            <section class="output-box generator-output">
+              <div class="field">
+                <h2 id="robots-heading">robots.txt snippet</h2>
+                <p class="field-hint">Merge these groups into your <code>/robots.txt</code>. Preserve any path restrictions the listed bots should follow, since bot-specific groups take precedence over <code>User-agent: *</code>.</p>
+                <textarea id="robots-output" aria-labelledby="robots-heading" class="code-input" rows="10" readonly spellcheck="false"></textarea>
+              </div>
+              <div class="btn-row">
+                <button class="btn btn-primary btn-sm" type="button" data-copy="robots" disabled>Copy robots.txt</button>
+                <button class="btn btn-secondary btn-sm" type="button" data-download="robots" disabled>Download robots.txt</button>
+              </div>
+            </section>
+            <section class="output-box generator-output">
+              <div class="field">
+                <h2 id="llms-heading">llms.txt</h2>
+                <p class="field-hint">Publish the file as <code>/llms.txt</code> on your site.</p>
+                <textarea id="llms-output" aria-labelledby="llms-heading" class="code-input" rows="8" readonly spellcheck="false"></textarea>
+              </div>
+              <div class="btn-row">
+                <button class="btn btn-primary btn-sm" type="button" data-copy="llms" disabled>Copy llms.txt</button>
+                <button class="btn btn-secondary btn-sm" type="button" data-download="llms" disabled>Download llms.txt</button>
+              </div>
+              <p class="field-hint" id="llms-error" role="status"></p>
+            </section>
+            <p class="status-toast" id="export-status" role="status"></p>
+          </div>
+        </div>
+        <noscript><p>Enable JavaScript to generate and export these files.</p></noscript>
+      </div>
+    </section>
+
+    <section class="workspace-card" aria-labelledby="keyword-research">
+      <div class="tool-panel is-active">
+        <h2 id="keyword-research">Find questions your next page can answer</h2>
+        <p>Use Mangools to check keyword difficulty and see which pages already rank for a topic.</p>
+        <p class="affiliate-note" id="mangools-disclosure">We may earn a commission if you buy through this Mangools link, at no extra cost to you.</p>
+        <a class="btn btn-secondary btn-sm" data-affiliate="mangools" data-placement="crawler_generator" data-utm-content="robots_llms_results" aria-describedby="mangools-disclosure">Explore keyword research with Mangools</a>
+        <div class="btn-row">
+          <a class="btn btn-primary" href="./#auditor">Score a page for AI citation readiness</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <strong>CitePulse GEO</strong>
+      <div class="footer-links">
+        <a href="./#auditor">GEO Auditor</a>
+        <a href="./llms-txt-guide.html">llms.txt Guide</a>
+        <a href="./robots-txt-ai-crawlers.html">AI Crawlers Guide</a>
+      </div>
+    </div>
+  </footer>
+  <script type="module" src="./assets/crawler-generator.js"></script>
+</body>
+</html>

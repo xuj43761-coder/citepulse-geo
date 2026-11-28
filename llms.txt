@@ -5,6 +5,7 @@
 All interactive tools run 100% locally in the visitor's browser with zero sign-up required.
 
 ## Interactive Tools
+- [AI Crawler robots.txt & llms.txt Generator](https://xuj43761-coder.github.io/citepulse-geo/ai-crawler-robots-llms-generator.html): Set policies for six AI user agents and export an llms.txt file for your key pages.
 - [GEO 100-Point Citation Readiness Auditor](https://xuj43761-coder.github.io/citepulse-geo/#auditor): Score any HTML or Markdown page across Crawler Hygiene, JSON-LD Schema, Entity Clarity, Fact Density, and FAQ Structure.
 - [llms.txt Generator & Spec Validator](https://xuj43761-coder.github.io/citepulse-geo/#llmstxt): Build and validate spec-compliant /llms.txt files for AI assistants and search crawlers.
 - [AI Crawler robots.txt Policy Builder](https://xuj43761-coder.github.io/citepulse-geo/#robots): Separate live AI search bots (OAI-SearchBot, PerplexityBot, Claude-SearchBot) from model training crawlers (GPTBot, ClaudeBot, Google-Extended, CCBot).
